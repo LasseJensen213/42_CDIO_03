@@ -14,7 +14,16 @@ public class Tax extends Field{
 	
 	private void landOnField(Player player)
 	{
-		int pos = player.getPos();
+		int pos = player.getPlayerPos();
+		if (pos == 3)
+		{
+			//Message
+			//Hæv
+		}
+		else if (pos == 21) 
+		{
+			//Choice function
+		}
 		
 	}
 	
