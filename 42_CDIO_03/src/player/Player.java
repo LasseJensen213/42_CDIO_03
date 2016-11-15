@@ -12,4 +12,4 @@ public class Player extends GenericPlayer
 		super(name);
 		super.accessAccount().deposit(30000);
 	}
-
+}
