@@ -1,5 +1,9 @@
 package field;
 
-public class Field {
-
+public abstract class Field {
+	
+	
+	public void generatefields() {
+		
+	};
 }

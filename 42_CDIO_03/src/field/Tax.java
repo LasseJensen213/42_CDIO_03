@@ -9,6 +9,22 @@ public class Tax extends Field{
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}
+
+	public int getTaxAmount() {
+		return taxAmount;
+	}
+
+	public void setTaxAmount(int taxAmount) {
+		this.taxAmount = taxAmount;
+	}
+
+	public int getTaxRate() {
+		return taxRate;
+	}
+
+	public void setTaxRate(int taxRate) {
+		this.taxRate = taxRate;
+	}
 	
 	
 	
