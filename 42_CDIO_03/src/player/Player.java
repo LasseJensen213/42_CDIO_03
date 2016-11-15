@@ -1,15 +1,17 @@
 package player;
 
-import player.GenericPlayer;
 
-public class Player extends GenericPlayer 
+
+public class Player 
 {
-
+	private String name;
+	private Account account;
 	private boolean skipTurn = false;
+	private int playerPos;
 
 	public Player(String name)
 	{
-		super(name);
-		super.accessAccount().deposit(30000);
+		this.name = name;
+		Account account = new Account(30000);
 	}
 }

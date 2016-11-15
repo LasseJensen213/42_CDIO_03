@@ -1,5 +1,5 @@
 package field;
-
+import player.Player;
 public class Tax extends Field{
 	private int taxAmount;;
 	private int taxRate;
@@ -10,6 +10,18 @@ public class Tax extends Field{
 		this.taxRate = taxRate;
 	}
 
+	
+	
+	private void landOnField(Player player)
+	{
+		int pos = player.getPos();
+		
+	}
+	
+	
+	
+	
+	
 	public int getTaxAmount() {
 		return taxAmount;
 	}

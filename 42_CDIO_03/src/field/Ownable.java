@@ -1,16 +1,10 @@
 package field;
-
-public class Ownable {
+import player.Player;
+public class Ownable extends Field{
 	private int price;
 	private Player owner;
 	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	
 	
