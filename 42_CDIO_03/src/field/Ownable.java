@@ -6,7 +6,10 @@ public class Ownable extends Field{
 	
 		
 	
-	
+	public Ownable(int price)
+	{
+		this.price = price;
+	}
 	
 	public int getPrice() {
 		return price;

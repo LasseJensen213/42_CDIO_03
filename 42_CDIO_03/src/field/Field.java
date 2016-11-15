@@ -1,5 +1,4 @@
 package field;
-
 public abstract class Field {
 	
 	
