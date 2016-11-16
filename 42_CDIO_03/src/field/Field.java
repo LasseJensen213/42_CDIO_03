@@ -9,5 +9,5 @@ public abstract class Field {
 		
 	};
 	
-	public void landOnField(Player player);
+	abstract void landOnField(Player player);
 }
