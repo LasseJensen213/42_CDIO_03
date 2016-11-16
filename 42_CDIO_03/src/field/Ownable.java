@@ -1,6 +1,6 @@
 package field;
 import player.Player;
-public class Ownable extends Field{
+public abstract class Ownable extends Field{
 	private int price;
 	private Player owner;
 	
@@ -10,6 +10,8 @@ public class Ownable extends Field{
 		this.price = price;
 	}
 	
+	@Override
+	abstract void landOnField(Player player);
 	
 	public int getPrice() {
 		return price;
