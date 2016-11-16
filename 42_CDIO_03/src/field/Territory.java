@@ -11,12 +11,12 @@ public class Territory extends Ownable {
 		super(price);
 		this.rent = rent;
 	}
-	
+	@Override
 	public int getRent()
 	{
 		return rent;
 	}
-	
+	@Override
 	public  void landOnField(Player p)
 	{
 		Player owner = this.getOwner();
