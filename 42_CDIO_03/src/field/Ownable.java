@@ -5,7 +5,10 @@ public class Ownable extends Field{
 	private Player owner;
 	
 		
-	
+	public Ownable(int price)
+	{
+		this.price = price;
+	}
 	
 	
 	public int getPrice() {

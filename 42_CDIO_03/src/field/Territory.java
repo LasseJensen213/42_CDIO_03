@@ -24,7 +24,8 @@ public class Territory extends Ownable {
 		{
 			//Hvis feltet ingen ejer har og spilleren har penge nok
 			//Skal have mulighed for at købe
-			String input = GUI.getUserSelection(new String[]{"Buy: "+this.getPrice(),"Skip"});
+			
+			String input = GUI.getUserSelection("",new String[]{"Buy: "+this.getPrice(),"Skip"});
 			if(input.equals("Buy: "+this.getPrice()))
 			{
 				this.setOwner(p);
