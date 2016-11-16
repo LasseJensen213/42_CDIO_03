@@ -1,5 +1,9 @@
 package field;
 
+<<<<<<< HEAD
+=======
+import desktop_resources.GUI;
+>>>>>>> refs/heads/Patch
 import player.Player;
 
 public class Territory extends Ownable {
@@ -24,11 +28,20 @@ public class Territory extends Ownable {
 		{
 			//Hvis feltet ingen ejer har og spilleren har penge nok
 			//Skal have mulighed for at købe
+<<<<<<< HEAD
 			String input = GUI.getUserSelection(new String[]{"Buy: "+this.getPrice(),"Skip"});
 			if(input.equals("Buy: "+this.getPrice()))
 			{
 				this.setOwner(p);
 				p.getAccount().deposit(-this.getPrice());
+=======
+			String options[] = {"Buy","Skip"};
+			String input = GUI.getUserSelection("Message", options);
+			if(input.equals(options[0]))
+			{
+				this.setOwner(p);
+				p.getAccount().withdraw(this.getPrice());
+>>>>>>> refs/heads/Patch
 			}
 		}
 		else if(owner==p)

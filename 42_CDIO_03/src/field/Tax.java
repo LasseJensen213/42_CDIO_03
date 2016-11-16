@@ -1,4 +1,5 @@
 package field;
+import desktop_resources.GUI;
 import player.Player;
 public class Tax extends Field{
 	private int taxAmount;;
@@ -11,21 +12,37 @@ public class Tax extends Field{
 	}
 
 	
-	
-	private void landOnField(Player player)
+	@Override
+	public void landOnField(Player player)
 	{
-		int pos = player.getPlayerPos();
-		if (pos == 3)
+		if (taxRate == 0)
 		{
-			//Message
-			//Hæv
+			GUI.showMessage("Tax message 2000 coins");
+			player.getAccount().withdraw(taxAmount);
+			
 		}
-		else if (pos == 21) 
+		else
 		{
-			//Choice function
+			int percentage = player.getAccount().getBalance()*taxRate/100;
+			String procent = "10%: " + percentage;
+			String options[] = {"4000",procent};
+			String input = GUI.getUserSelection("Valg: 4000 eller 10% af balance", options);
+			
+			if(input.equals(options[0]))
+				{
+					player.getAccount().withdraw(taxAmount);
+				}
+			else if(input.equals(options[1]))
+			{
+				player.getAccount().withdraw(percentage);
+			}
+		}
 		}
 		
-	}
+		
+			
+		
+	
 	
 	
 	
