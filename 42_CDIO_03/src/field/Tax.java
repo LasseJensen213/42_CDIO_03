@@ -12,7 +12,7 @@ public class Tax extends Field{
 	}
 
 	
-	
+	@Override
 	private void landOnField(Player player)
 	{
 		
