@@ -1,10 +1,8 @@
 package field;
-<<<<<<< HEAD
-=======
 
 import player.Player;
 
->>>>>>> refs/heads/Patch
+
 public abstract class Field {
 	
 	

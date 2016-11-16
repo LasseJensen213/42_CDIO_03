@@ -10,15 +10,8 @@ public abstract class Ownable extends Field{
 		this.price = price;
 	}
 	
-<<<<<<< HEAD
-	public Ownable(int price)
-	{
-		this.price = price;
-	}
-=======
 	@Override
 	abstract void landOnField(Player player);
->>>>>>> refs/heads/Patch
 	
 	public int getPrice() {
 		return price;
