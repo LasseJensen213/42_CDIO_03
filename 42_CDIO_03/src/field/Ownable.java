@@ -1,15 +1,18 @@
 package field;
 import player.Player;
-public class Ownable extends Field{
+public abstract class Ownable extends Field{
 	private int price;
 	private Player owner;
 	
 		
 	
+	
 	public Ownable(int price)
 	{
 		this.price = price;
 	}
+	
+	public abstract int getRent();
 	
 	public int getPrice() {
 		return price;
