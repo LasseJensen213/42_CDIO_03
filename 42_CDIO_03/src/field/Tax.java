@@ -13,7 +13,7 @@ public class Tax extends Field{
 
 	
 	@Override
-	private void landOnField(Player player)
+	public void landOnField(Player player)
 	{
 		
 		int pos = player.getPlayerPos();
