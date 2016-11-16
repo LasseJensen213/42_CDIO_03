@@ -21,7 +21,7 @@ public class Territory extends Ownable {
 		if(owner==null)
 		{
 			//Hvis feltet ingen ejer har
-			//Skal have mulighed for at købe
+			//Skal have mulighed for at købe, hvis han køber bliver 
 		}
 		else if(owner==p)
 		{
