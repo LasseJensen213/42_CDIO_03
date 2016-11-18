@@ -1,6 +1,7 @@
 package player;
 
 import java.util.ArrayList;
+import stringbanks.PlayerManager_Stringbank;
 
 import desktop_resources.GUI;
 
@@ -40,7 +41,7 @@ public class PlayerManager {
 	public void initPlayers()
 	{
 		//First choose number of players
-		nPlayers = Integer.parseInt(GUI.getUserSelection("Choose NUMPLAYERS", new String[]{"2","3","4","5","6"}));
+		nPlayers = Integer.parseInt(GUI.getUserSelection(PlayerManager_Stringbank.getMsg(0), new String[]{"2","3","4","5","6"}));
 		
 		for(int i = 0; i<nPlayers;i++)
 		{
@@ -55,10 +56,10 @@ public class PlayerManager {
 		int nPlayersInList = playerList.size(); 
 		while(true)
 		{
-			String name = GUI.getUserString("Player "+(nPlayersInList+1)+" Please choose a name (Max 16 characters long)");
+			String name = GUI.getUserString(String.format(PlayerManager_Stringbank.getMsg(1), nPlayersInList+1));
 			if(name.length()>16)
 			{
-				GUI.showMessage("Name too long");
+				GUI.showMessage(PlayerManager_Stringbank.getMsg(2));
 				continue;
 			}
 			else if(name.length()==0)
@@ -68,7 +69,7 @@ public class PlayerManager {
 			
 			if(nameTaken(name))
 			{
-				GUI.showMessage("That name has already been taken");
+				GUI.showMessage(PlayerManager_Stringbank.getMsg(3));
 			}
 			else 
 				return name;
