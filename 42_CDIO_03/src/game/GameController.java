@@ -21,10 +21,8 @@ public class GameController {
 	
 	public void controller()
 	{
-		//Mangler en menu her//
-		
-		gameBoard.initBoard()//(Laver fields arrayet) Hvad end metoden nu kommer til at hedde
 		playerManager.initPlayers(); //Laver alle spillerne
+		
 		
 	}
 	
