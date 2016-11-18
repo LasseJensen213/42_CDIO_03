@@ -3,7 +3,8 @@ package board;
 import java.awt.Color;
 import field.Field;
 import field.Territory;
-import stringbanks.TerritoryStringbank;
+
+import stringbanks.Territory_Stringbank;
 public class Board {
 
 	//Field array
@@ -32,7 +33,11 @@ public class Board {
 	{
 		for(int i=0;i<territoryFields.length;i++)
 		{
-			territoryFields[i] = new Territory(TerritoryStringbank.)
+			String description = stringbanks.Territory_Stringbank.getTerritoryDescriptionsArray(i);
+			String subtext = TerritoryStringBank.getSubtextDescriptionsArray(i);
+			int price = territoryPrice[i];
+			int rent = territoryRent[i];
+			territoryFields[i] = new Territory(description,subtext,rent,price);
 		}
 	}
 //			public Territory(String descr, String subtext,int price, int rent)

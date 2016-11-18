@@ -1,6 +1,6 @@
 package stringbanks;
 
-public class TerritoryStringbank {
+public class Territory_Stringbank {
 
 	//Territory descriptions.
 	String tribeEncampmentDescription = "Description";
