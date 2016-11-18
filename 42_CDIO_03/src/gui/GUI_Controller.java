@@ -9,7 +9,7 @@ public class GUI_Controller {
 	public void controller()
 	{
 		gameBoard = new Board();
-		gameBoard.initFields();
+		gameBoard.initilizeFields();
 		while(true)
 		{
 
@@ -21,7 +21,7 @@ public class GUI_Controller {
 				// når man hopper ud af denne metode er GUI'en 
 				//lukket ned så man skal starte den op igen
 				gameBoard = new Board();
-				gameBoard.initFields();
+				gameBoard.initilizeFields();
 
 			}
 			else if(input.equals("Rules of the game"))
