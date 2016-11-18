@@ -1,19 +1,9 @@
 package board;
 
 import java.awt.Color;
-import field.Field;
-import field.Territory;
-import field.Fleet;
-import field.LaborCamp;
-import field.Refuge;
-import field.Tax;
+import field.*;
 
-import stringbanks.Territory_Stringbank;
-import stringbanks.Fleet_Stringbank;
-import stringbanks.Tax_Stringbank;
-import stringbanks.LaborCamp_Stringbank;
-import stringbanks.Refuge_Stringbank;
-
+import stringbanks.*;
 public class Board {
 
 	//Field array
