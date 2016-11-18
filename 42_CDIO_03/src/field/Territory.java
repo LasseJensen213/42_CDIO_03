@@ -1,12 +1,19 @@
 package field;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class Territory extends Ownable {
 =======
+=======
+>>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
 import desktop_resources.GUI;
 import player.Player;
+<<<<<<< HEAD
+>>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
+=======
 >>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	private int rent;
 	
@@ -40,6 +47,8 @@ import player.Player;
 			//Betaler automatisk renten
 			//owner skal så have pengene
 =======
+=======
+>>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
 public class Territory extends Ownable {
 
 	private int rent;
@@ -84,6 +93,9 @@ public class Territory extends Ownable {
 			
 			p.getAccount().deposit(-rent);
 			owner.getAccount().deposit(rent);
+<<<<<<< HEAD
+>>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
+=======
 >>>>>>> branch 'Patch' of https://github.com/LasseJensen213/42_CDIO_03
 		}
 	}
