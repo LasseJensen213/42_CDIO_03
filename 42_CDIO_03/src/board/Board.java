@@ -50,17 +50,16 @@ public class Board {
 	 * @return fgColor array
 	 */
 	public void initfgcolor()
-	{
+	{	int fieldNrReached = 0;
 		for(int i = 0;i<40;i++)
 		{
-			if(fieldsInUse[i]==true)
+			fgColors[i]=Color.BLACK;
+			if(fieldsInUse[fieldNrReached]==i)
 			{
 				fgColors[i]=Color.YELLOW;
+				fieldNrReached++;
 			}
-			if(fieldsInUse[i]==false)
-			{
-				fgColors[i]=Color.BLACK;
-			}
+			
 		}
 	}
 
