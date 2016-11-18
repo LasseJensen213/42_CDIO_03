@@ -2,9 +2,11 @@ package gui;
 import board.Board;
 import desktop_resources.GUI;
 import game.GameController;
+
 public class GUI_Controller {
 
 	private Board gameBoard;
+	private BoardGameGUI gameGUI;
 
 	public void controller()
 	{
@@ -12,12 +14,12 @@ public class GUI_Controller {
 		gameBoard.initilizeFields();
 		while(true)
 		{
-
-			String input = BoardGameGUI.menu();
+			gameGUI = new BoardGameGUI();
+			String input = gameGUI.menu();
 			if(input.equals("New game"))
 			{
 				GameController game = new GameController();
-				game.controller(); 
+				game.gameControl(); 
 				// når man hopper ud af denne metode er GUI'en 
 				//lukket ned så man skal starte den op igen
 				gameBoard = new Board();
@@ -26,9 +28,9 @@ public class GUI_Controller {
 			}
 			else if(input.equals("Rules of the game"))
 			{
-				BoardGameGUI.showRules();
+				gameGUI.showRules();
 			}
-			else if(BoardGameGUI.confirmInput())
+			else if(gameGUI.confirmInput())
 			{
 				GUI.close();
 				break;
@@ -36,18 +38,6 @@ public class GUI_Controller {
 		}
 	}
 
-	public void showPreRollMenu()
-	{
-		String input = BoardGameGUI.preRollMenu();
-		if(input.equals("Back to Menu"))
-		{
-			if(BoardGameGUI.confirmInput())
-			{
-				
-			}
-		}
-
-	}
 
 
 }

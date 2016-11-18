@@ -8,19 +8,19 @@ import desktop_resources.GUI;
 public class BoardGameGUI {
 
 	
-	public static String menu()
+	public String menu()
 	{
 		String[] options = {"New game","Rules of the game","Close"};
 		return GUI.getUserSelection("MENU MSG", options);
 	}
 	
-	public static String preRollMenu()
+	public String preRollMenu()
 	{
 		String[] options = {"Roll dice","Back to menu"};
 		return GUI.getUserButtonPressed("MENU MSG", options);
 	}
 	
-	public static void showDiceRolling(int diceResult1, int diceResult2)
+	public void showDiceRolling(int diceResult1, int diceResult2)
 	{
 		Random rand = new Random();
 		int faceValue1, faceValue2;
@@ -60,18 +60,18 @@ public class BoardGameGUI {
 		
 	}
 	
-	public static void movePlayerModel(String name, int playerPos, int diceResult)
+	public void movePlayerModel(String name, int playerPos, int diceResult)
 	{
 		//only moves the player on the board. Doesn't actually update their position
 		
 	}
 	
-	public static boolean confirmInput()
+	public boolean confirmInput()
 	{
 		return GUI.getUserLeftButtonPressed("CONFIRM INPUT MSG", "Yes", "No");
 	}
 	
-	public static void showRules()
+	public void showRules()
 	{
 		GUI.showMessage("GAME RULES");
 	}
