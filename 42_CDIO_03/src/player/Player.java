@@ -40,7 +40,7 @@ public class Player
 		return broke;
 	}
 
-	public void setSkipTurn(boolean broke) {
+	public void setBroke(boolean broke) {
 		this.broke = broke;
 	}
 

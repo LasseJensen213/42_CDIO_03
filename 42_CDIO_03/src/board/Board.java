@@ -1,12 +1,7 @@
 package board;
 
 import java.awt.Color;
-import field.Field;
-import field.Territory;
-import field.Fleet;
-import field.LaborCamp;
-import field.Refuge;
-import field.Tax;
+import field.*;
 
 import stringbanks.Territory_Stringbank;
 import stringbanks.Fleet_Stringbank;
