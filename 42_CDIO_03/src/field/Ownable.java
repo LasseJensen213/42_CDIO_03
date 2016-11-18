@@ -5,13 +5,11 @@ public abstract class Ownable extends Field{
 	private Player owner;
 	
 		
-	public Ownable(int price)
+	public Ownable(String descr, String subtext,int price)
 	{
+		super(descr,subtext);
 		this.price = price;
 	}
-	
-	@Override
-	abstract void landOnField(Player player);
 	
 	public int getPrice() {
 		return price;
@@ -26,7 +24,13 @@ public abstract class Ownable extends Field{
 		this.owner = owner;
 	}
 	
+	public abstract int getRent();
 	
+	@Override
+	public String toString()
+	{
+		return super.toString()+" Price: "+price;
+	}
 	
 	
 }

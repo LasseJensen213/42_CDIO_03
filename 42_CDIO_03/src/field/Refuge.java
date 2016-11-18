@@ -2,12 +2,14 @@ package field;
 
 import player.Player;
 
-public class Refuge {
+public class Refuge extends Field {
 
 	private int receive;
 
 	//Constructor
-	public Refuge(int receive) {
+	public Refuge(String descr, String subtext, int receive)
+	{
+		super(descr, subtext);
 		this.receive = receive;
 	}
 
@@ -21,6 +23,12 @@ public class Refuge {
 
 	public void landOnField(Player p) {
 		p.getAccount().deposit(receive);
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString()+" Type: "+this.getClass().getName()+" Bonus: "+receive;
 	}
 
 }

@@ -5,8 +5,9 @@ public class Tax extends Field{
 	private int taxAmount;;
 	private int taxRate;
 	
-	protected Tax(int taxAmount, int taxRate)
+	public Tax(String descr, String subtext, int taxAmount, int taxRate)
 	{
+		super(descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}
@@ -64,6 +65,11 @@ public class Tax extends Field{
 		this.taxRate = taxRate;
 	}
 	
+	@Override
+	public String toString()
+	{
+		return super.toString()+" Type: "+this.getClass().getName()+" Tax: "+taxAmount;
+	}
 	
 	
 }
