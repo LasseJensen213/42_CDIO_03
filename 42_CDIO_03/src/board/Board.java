@@ -15,11 +15,14 @@ public class Board {
 	 * @return true: if field is in use 
 	 * <br> false: if field is not use
 	 */
-	boolean fieldsInUse[] = {true,false,true,false,true,false,true,false,true,false,true,true,false,true,false,true,false,true,false,true,true,false,true,false,true,false,true,false,true,false,true,true,false,true,false,true,false,true,false,true};
+	int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
 
-
-
-
+//	public void opretfields() 
+//	{
+//		for()
+//	}
+//	//Array {100,300,500..
+//	//pris	{1000,1500.
 
 
 	/**
@@ -28,16 +31,17 @@ public class Board {
 	 */
 	public void initbgcolor()
 	{
+		int fieldNrReached = 0;
 		for(int i = 0;i<40;i++)
 		{
-			if(fieldsInUse[i]==true)
+			bgColors[i]=Color.BLACK;
+
+			if(fieldsInUse[fieldNrReached]==i)
 			{
 				bgColors[i]=Color.GREEN;
+				fieldNrReached++;
 			}
-			else if(fieldsInUse[i]==false)
-			{
-				bgColors[i]=Color.BLACK;
-			}
+			
 		}
 	}
 
