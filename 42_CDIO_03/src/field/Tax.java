@@ -25,7 +25,7 @@ public class Tax extends Field{
 		{
 			int percentage = player.getAccount().getBalance()*taxRate/100;
 			String procent = "10%: " + percentage;
-			String options[] = {"4000",procent};
+			String options[] = {"4000","10 procent, svarende til:" + procent};
 			String input = GUI.getUserSelection("Valg: 4000 eller 10% af balance", options);
 			
 			if(input.equals(options[0]))
