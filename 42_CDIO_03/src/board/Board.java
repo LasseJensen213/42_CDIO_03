@@ -2,6 +2,8 @@ package board;
 
 import java.awt.Color;
 import field.Field;
+import field.Territory;
+import stringbanks.TerritoryStringbank;
 public class Board {
 
 	//Field array
@@ -10,12 +12,33 @@ public class Board {
 	//GUI Colours
 	Color bgColors[] = new Color[40];
 	Color fgColors[] = new Color[40];
-	
+
 	/**
-	 * @return true: if field is in use 
-	 * <br> false: if field is not use
-	 */
+	 * Describes the fields in use in the GUI.
+	*/
 	int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
+	
+	//Territory related information.
+	String territorydescriptions[] = new String[11];
+	String territorysubtext[] = new String[11];
+	int territoryPrice[] = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
+	int territoryRent[] = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000};
+	
+	//Territory fields.
+	Territory territoryFields[] = new Territory[11];
+	
+	
+	public void initTerritoryFields()
+	{
+		for(int i=0;i<territoryFields.length;i++)
+		{
+			territoryFields[i] = new Territory(TerritoryStringbank.)
+		}
+	}
+//			public Territory(String descr, String subtext,int price, int rent)
+	Territory a = new Territory("descr","subtext",30,40);
+	
+	
 
 //	public void opretfields() 
 //	{
@@ -38,7 +61,7 @@ public class Board {
 
 			if(fieldsInUse[fieldNrReached]==i)
 			{
-				bgColors[i]=Color.GREEN;
+				bgColors[i]=Color.YELLOW;
 				fieldNrReached++;
 			}
 			
@@ -56,7 +79,7 @@ public class Board {
 			fgColors[i]=Color.BLACK;
 			if(fieldsInUse[fieldNrReached]==i)
 			{
-				fgColors[i]=Color.YELLOW;
+				fgColors[i]=Color.GREEN;
 				fieldNrReached++;
 			}
 			
