@@ -8,6 +8,7 @@ public class GameController {
 	private PlayerManager playerManager;
 	private DiceManager diceCup;
 	private Board gameBoard;
+	private int dice1, dice2;
 	private int pNr; //Hvis tur det er.
 	
 	public GameController()
@@ -21,6 +22,7 @@ public class GameController {
 	
 	public void controller()
 	{
+		
 		playerManager.initPlayers(); //Laver alle spillerne
 		
 		

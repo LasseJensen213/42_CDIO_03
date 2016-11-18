@@ -36,5 +36,18 @@ public class GUI_Controller {
 		}
 	}
 
+	public void showPreRollMenu()
+	{
+		String input = BoardGameGUI.preRollMenu();
+		if(input.equals("Back to Menu"))
+		{
+			if(BoardGameGUI.confirmInput())
+			{
+				
+			}
+		}
+
+	}
+
 
 }
