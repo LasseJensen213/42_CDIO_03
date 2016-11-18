@@ -12,7 +12,9 @@ public class Tax extends Field{
 		this.taxRate = taxRate;
 	}
 
-	
+	/**
+	 * 	
+	 */
 	@Override
 	public void landOnField(Player player)
 	{
