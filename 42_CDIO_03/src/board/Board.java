@@ -1,12 +1,7 @@
 package board;
 
 import java.awt.Color;
-import field.Field;
-import field.Territory;
-import field.Fleet;
-import field.LaborCamp;
-import field.Refuge;
-import field.Tax;
+import field.*;
 
 import stringbanks.Territory_Stringbank;
 import stringbanks.Fleet_Stringbank;
@@ -78,8 +73,8 @@ public class Board {
 	{
 		for(int i=0;i<territoryFields.length;i++)
 		{
-			String description = stringbanks.Territory_Stringbank.getTerritoryDescriptionsArray(i);
-			String subtext = stringbanks.Territory_Stringbank.getTerritorySubtextArray(i);
+			String description = Territory_Stringbank.getTerritoryDescriptionsArray(i);
+			String subtext = Territory_Stringbank.getTerritorySubtextArray(i);
 			int price = territoryPrice[i];
 			int rent = territoryRent[i];
 			territoryFields[i] = new Territory(description,subtext,rent,price);
@@ -93,8 +88,8 @@ public class Board {
 	{
 		for(int i=0;i<fleetFields.length;i++)
 		{
-			String description = stringbanks.Fleet_Stringbank.getFleetDescriptionArray(i);
-			String subtext = stringbanks.Fleet_Stringbank.getFleetSubtextArray(i);
+			String description = Fleet_Stringbank.getFleetDescriptionArray(i);
+			String subtext = Fleet_Stringbank.getFleetSubtextArray(i);
 			int price = fleetPrice[i];
 			fleetFields[i] = new Fleet(description,subtext,price);
 		}
@@ -107,8 +102,8 @@ public class Board {
 	{
 		for(int i=0;i<taxFields.length;i++)
 		{
-			String description = stringbanks.Tax_Stringbank.getTaxDescriptionArray(i);
-			String subtext = stringbanks.Tax_Stringbank.getTaxSubtextArray(i);
+			String description = Tax_Stringbank.getTaxDescriptionArray(i);
+			String subtext = Tax_Stringbank.getTaxSubtextArray(i);
 			int taxAmount = tax_TaxAmount[i];
 			int taxRate = tax_TaxRate[i];
 			taxFields[i] = new Tax(description,subtext,taxAmount,taxRate);
@@ -122,8 +117,8 @@ public class Board {
 	{
 		for(int i=0;i<laborCampFields.length;i++)
 		{
-			String description = stringbanks.LaborCamp_Stringbank.getLaborCampDescriptionArray(i);
-			String subtext = stringbanks.LaborCamp_Stringbank.getLaborCampSubtextArray(i);
+			String description = LaborCamp_Stringbank.getLaborCampDescriptionArray(i);
+			String subtext = LaborCamp_Stringbank.getLaborCampSubtextArray(i);
 			int price = laborCampPrice[i];
 			int baseRent = laborCampBaseRent[i];
 			laborCampFields[i] = new LaborCamp(description,subtext,price,baseRent);
@@ -137,8 +132,8 @@ public class Board {
 	{
 		for(int i=0;i<taxFields.length;i++)
 		{
-			String description = stringbanks.Refuge_Stringbank.getRefugeDescriptionArray(i);
-			String subtext = stringbanks.Refuge_Stringbank.getRefugeSubtextArray(i);
+			String description = Refuge_Stringbank.getRefugeDescriptionArray(i);
+			String subtext = Refuge_Stringbank.getRefugeSubtextArray(i);
 			int recieve = refugeRecieve[i];
 			refugeFields[i] = new Refuge(description,subtext,recieve);
 		}
