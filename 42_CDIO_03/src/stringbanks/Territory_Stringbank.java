@@ -3,31 +3,31 @@ package stringbanks;
 public class Territory_Stringbank {
 
 	//Territory descriptions.
-	String tribeEncampmentDescription = "Description";
-	String craterDescription = "Description";
-	String mountainDescription = "Description";
-	String coldDesertDescription = "Description";
-	String blackCaveDescription = "Description";
-	String wereWallDescription = "Description";
-	String mountainVillageDescription = "Description";
-	String southCitadelDescription = "Description";
-	String palaceGatesDescription = "Description";
-	String towerDescription = "Description";
-	String castleDescription = "Description";
+	private static String tribeEncampmentDescription = "Description";
+	private static String craterDescription = "Description";
+	private static String mountainDescription = "Description";
+	private static String coldDesertDescription = "Description";
+	private static String blackCaveDescription = "Description";
+	private static String wereWallDescription = "Description";
+	private static String mountainVillageDescription = "Description";
+	private static String southCitadelDescription = "Description";
+	private static String palaceGatesDescription = "Description";
+	private static String towerDescription = "Description";
+	private static String castleDescription = "Description";
 	
 	
 	//Territory subtext.
-	String tribeEncampmentSubtext = "Subtext";
-	String craterSubtext = "Subtext";
-	String mountainSubtext = "Subtext";
-	String coldDesertSubtext = "Subtext";
-	String blackCaveSubtext = "Subtext";
-	String wereWallSubtext = "Subtext";
-	String mountainVillageSubtext = "Subtext";
-	String southCitadelSubtext = "Subtext";
-	String palaceGatesSubtext = "Subtext";
-	String towerSubtext = "Subtext";
-	String castleSubtext = "Subtext";
+	private static String tribeEncampmentSubtext = "Subtext";
+	private static String craterSubtext = "Subtext";
+	private static String mountainSubtext = "Subtext";
+	private static String coldDesertSubtext = "Subtext";
+	private static String blackCaveSubtext = "Subtext";
+	private static String wereWallSubtext = "Subtext";
+	private static String mountainVillageSubtext = "Subtext";
+	private static String southCitadelSubtext = "Subtext";
+	private static String palaceGatesSubtext = "Subtext";
+	private static String towerSubtext = "Subtext";
+	private static String castleSubtext = "Subtext";
 	
 	
 	
@@ -36,21 +36,21 @@ public class Territory_Stringbank {
 	
 	
 	//Territory descriptions array
-	String territoryDescriptionsArray[] = {tribeEncampmentDescription,craterDescription,mountainDescription,coldDesertDescription,
+	private static String territoryDescriptionsArray[] = {tribeEncampmentDescription,craterDescription,mountainDescription,coldDesertDescription,
 			blackCaveDescription,wereWallDescription,mountainVillageDescription,southCitadelDescription,palaceGatesDescription,
 			towerDescription,castleDescription};
 	
 	//Territory subtext array
-	String territorySubtextArray[] = {tribeEncampmentSubtext,craterSubtext,mountainSubtext,coldDesertSubtext,blackCaveSubtext,
+	private static String territorySubtextArray[] = {tribeEncampmentSubtext,craterSubtext,mountainSubtext,coldDesertSubtext,blackCaveSubtext,
 			wereWallSubtext,mountainVillageSubtext,southCitadelSubtext,palaceGatesSubtext,towerSubtext,castleSubtext};
 
 	
 	//Getters 
-	public String getTerritoryDescriptionsArray(int i) {
+	public static String getTerritoryDescriptionsArray(int i) {
 		return territoryDescriptionsArray[i];
 	}
 
-	public String getTerritorySubtextArray(int i) {
+	public static String getTerritorySubtextArray(int i) {
 		return territorySubtextArray[i];
 	}
 	
