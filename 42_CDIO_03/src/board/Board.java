@@ -12,7 +12,7 @@ public class Board {
 	public void generateBoard()
 	{
 		//Intialize the fields
-		initTerritoryFields();
+		FieldGenerator.initTerritoryFields();
 		initFleetFields();
 		initTaxFields();
 		initLaborCampFields();

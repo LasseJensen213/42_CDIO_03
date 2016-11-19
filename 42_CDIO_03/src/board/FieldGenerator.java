@@ -150,9 +150,9 @@ public class FieldGenerator {
 			{
 
 			}
-			if(i==territoryPlace[territoryPlaceReached])
+			if(i==gotoGUIField(territoryPlace[territoryPlaceReached]))
 			{
-				boardFields[i] =	territoryFields[territoryPlaceReached];
+				boardFields[i] = territoryFields[territoryPlaceReached];
 				territoryPlaceReached++;
 
 				if(territoryPlaceReached>territoryFields.length)
@@ -160,7 +160,7 @@ public class FieldGenerator {
 					territoryPlaceReached=0;
 				}
 			}
-			else if(i==fleetPlaceReached)
+			else if(i==gotoGUIField(fleetPlaceReached))
 			{
 				boardFields[i] = fleetFields[fleetPlaceReached];
 				fleetPlaceReached++;
@@ -169,7 +169,7 @@ public class FieldGenerator {
 					fleetPlaceReached=0;
 				}
 			}
-			else if(i==taxPlaceReached)
+			else if(i==gotoGUIField(taxPlaceReached))
 			{
 				boardFields[i] = taxFields[taxPlaceReached];
 				taxPlaceReached++;
@@ -178,7 +178,7 @@ public class FieldGenerator {
 					taxPlaceReached=0;
 				}
 			}
-			else if(i==laborCampPlaceReached)
+			else if(i==gotoGUIField(laborCampPlaceReached))
 			{
 				boardFields[i] = laborCampFields[laborCampPlaceReached];
 				laborCampPlaceReached++;
@@ -187,7 +187,7 @@ public class FieldGenerator {
 					laborCampPlaceReached=0;
 				}
 			}
-			else if(i==refugePlaceReached)
+			else if(i==gotoGUIField(refugePlaceReached))
 			{
 				boardFields[i] = refugeFields[refugePlaceReached];
 				refugePlaceReached++;
