@@ -1,6 +1,8 @@
 package board;
 
 
+import java.awt.Color;
+
 import board.FieldGenerator;
 import desktop_fields.Field;
 import desktop_fields.Tax;
@@ -9,29 +11,44 @@ import desktop_resources.GUI;
 public class Board {
 
 	
-	public void generateBoard()
+	public static void generateBoard()
 	{
 		//Intialize the fields
 		FieldGenerator.initTerritoryFields();
 		FieldGenerator.initFleetFields();
 		FieldGenerator.initTaxFields();
 		FieldGenerator.initLaborCampFields();
-		FieldGeneator.initRefugeFields();
+		
+		FieldGenerator.initRefugeFields();
 		
 		//Initialize the colors
 		FieldGenerator.initbgcolor();
 		FieldGenerator.initfgcolor();
 		
-		Field[] fields = new Field[nFields];
+		Field[] fields = new Field[40];
 
 		for (int i = 0; i<fields.length;i++)
 		{
-			String Title = FieldGenerator.getBoardFields(i).getTitle();
-			String descr = FieldGenerator.getBoardFields(i).getDescr();
-			String subtext = FieldGenerator.getBoardFields(i).getSubtext();
-			Color bgcolor = FieldGenerator.g
-			fields[i]= new Tax.Builder().setTitle(boardFields[i].getTitle()).setDescription(String.valueOf(boardFields[i].getDescr())).
-					setSubText(boardFields[i].getSubtext()).setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
+			String title = FieldGenerator.getFields(i).getTitle();
+			if (title == null)
+			{
+				title = "";
+			}
+			String descr = FieldGenerator.getFields(i).getDescr();
+			if (descr == null)
+			{
+				descr = "";
+			}
+			String subtext = FieldGenerator.getFields(i).getSubtext();
+			if (subtext == null)
+			{
+				subtext = "";
+			}
+			Color bgColor = FieldGenerator.getBgColors(i);
+			Color fgColor = FieldGenerator.getFgColors(i);
+			fields[i]= new Tax.Builder().setTitle(title).setDescription(descr).setSubText(subtext).
+					setBgColor(bgColor).setFgColor(fgColor).build();
+			
 		}
 		GUI.create(fields);
 		

@@ -253,11 +253,11 @@ public static void initFleetFields()
 		return (fieldsInUse[Nr]);
 	}
 
-	public static Field getfields(int Nr) {
+	public static Field getFields(int Nr) {
 		return fields[Nr];
 	}
 
-	public Color getBgColors(int Nr) {
+	public static Color getBgColors(int Nr) {
 		return bgColors[Nr];
 	}
 
