@@ -7,47 +7,47 @@ import stringbanks.*;
 public class FieldGenerator {
 
 	//Field array
-	private Field boardFields[] = new Field[40];	
+	private static Field fields[] = new Field[40];	
 
 	//GUI Colours
-	private Color bgColors[] = new Color[40];
-	private Color fgColors[] = new Color[40];
+	private static Color bgColors[] = new Color[40];
+	private static Color fgColors[] = new Color[40];
 
 	/**
 	 * Describes the fields in use in the GUI.
 	 */
-	private final int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
+	private final static int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
 	int nFields = 22; 				// Number of fields in use
 	//Territory related information.
-	private final int territoryPrice[] = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
-	private final int territoryRent[] = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000};
-	private final int territoryPlace[] = {2,5,6,8,10,11,13,14,16,17,19};
+	private final static int territoryPrice[] = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
+	private final static int territoryRent[] = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000};
+	private final static int territoryPlace[] = {2,5,6,8,10,11,13,14,16,17,19};
 
 	//Labor Camp related information.
-	private final int laborCampPrice[] = {2500,2500};
-	private final int laborCampBaseRent[] = {100,100};
-	private final int laborCampPlace[] = {7,18};
+	private final static int laborCampPrice[] = {2500,2500};
+	private final static int laborCampBaseRent[] = {100,100};
+	private final static int laborCampPlace[] = {7,18};
 
 	//Fleet related information.
-	private final int fleetPrice[] = {4000,4000,4000,4000};
-	private final int fleetPlace[] = {4,9,15,20};
+	private final static int fleetPrice[] = {4000,4000,4000,4000};
+	private final static int fleetPlace[] = {4,9,15,20};
 
 	//Tax related information.
-	private final int tax_TaxAmount[] = {2000,4000};
-	private final int tax_TaxRate[] = {0,10};
-	private final int taxPlace[] = {3,21};
+	private final static int tax_TaxAmount[] = {2000,4000};
+	private final static int tax_TaxRate[] = {0,10};
+	private final static int taxPlace[] = {3,21};
 
 	//Refuge related information.
-	private final int refugeRecieve[] = {5000,500};
-	private final int refugePlace[] = {12,22};
+	private final static int refugeRecieve[] = {5000,500};
+	private final static int refugePlace[] = {12,22};
 
 	//Field arrays:
 	//Territory fields.
-	private Territory territoryFields[] = new Territory[11];
-	private Fleet fleetFields[] = new Fleet[4];
-	private Tax taxFields[] = new Tax[2];
-	private LaborCamp laborCampFields[] = new LaborCamp[2];
-	private Refuge refugeFields[] = new Refuge[2];
+	private static Territory territoryFields[] = new Territory[11];
+	private static Fleet fleetFields[] = new Fleet[4];
+	private static Tax taxFields[] = new Tax[2];
+	private static LaborCamp laborCampFields[] = new LaborCamp[2];
+	private static Refuge refugeFields[] = new Refuge[2];
 
 
 
@@ -57,7 +57,7 @@ public class FieldGenerator {
 	/**
 	 * Initializes the territory fields
 	 */
-	public void initTerritoryFields()
+	public static void initTerritoryFields()
 	{
 		for(int i=0;i<territoryFields.length;i++)
 		{
@@ -73,7 +73,7 @@ public class FieldGenerator {
 	/**
 	 * initalizes the fleet fields
 	 */
-	public void initFleetFields()
+public static void initFleetFields()
 	{
 		for(int i=0;i<fleetFields.length;i++)
 		{
@@ -88,7 +88,7 @@ public class FieldGenerator {
 	/**
 	 * initoalizes the tax fields
 	 */
-	public void initTaxFields()
+	public static void initTaxFields()
 	{
 		for(int i=0;i<taxFields.length;i++)
 		{
@@ -104,7 +104,7 @@ public class FieldGenerator {
 	/**
 	 * initializes the labor camp fields
 	 */
-	public void initLaborCampFields()
+	public static void initLaborCampFields()
 	{
 		for(int i=0;i<laborCampFields.length;i++)
 		{
@@ -120,7 +120,7 @@ public class FieldGenerator {
 	/**
 	 * initializes the refuge fields
 	 */
-	public void initRefugeFields() 
+	public static void initRefugeFields() 
 	{
 		for(int i=0;i<taxFields.length;i++)
 		{
@@ -135,7 +135,7 @@ public class FieldGenerator {
 	/**
 	 * Initialize the field array
 	 */
-	public void initializeFields()
+	public static void initializeFields()
 	{
 		int territoryPlaceReached = 0;
 		int fleetPlaceReached = 0;
@@ -144,7 +144,7 @@ public class FieldGenerator {
 		int laborCampPlaceReached = 0;
 
 
-		for(int i = 0;i<boardFields.length;i++)
+		for(int i = 0;i<fields.length;i++)
 		{
 			if(i==0)
 			{
@@ -152,7 +152,7 @@ public class FieldGenerator {
 			}
 			if(i==gotoGUIField(territoryPlace[territoryPlaceReached]))
 			{
-				boardFields[i] = territoryFields[territoryPlaceReached];
+				fields[i] = territoryFields[territoryPlaceReached];
 				territoryPlaceReached++;
 
 				if(territoryPlaceReached>territoryFields.length)
@@ -162,7 +162,7 @@ public class FieldGenerator {
 			}
 			else if(i==gotoGUIField(fleetPlaceReached))
 			{
-				boardFields[i] = fleetFields[fleetPlaceReached];
+				fields[i] = fleetFields[fleetPlaceReached];
 				fleetPlaceReached++;
 				if(fleetPlaceReached>fleetFields.length)
 				{
@@ -171,7 +171,7 @@ public class FieldGenerator {
 			}
 			else if(i==gotoGUIField(taxPlaceReached))
 			{
-				boardFields[i] = taxFields[taxPlaceReached];
+				fields[i] = taxFields[taxPlaceReached];
 				taxPlaceReached++;
 				if(taxPlaceReached>taxFields.length)
 				{
@@ -180,7 +180,7 @@ public class FieldGenerator {
 			}
 			else if(i==gotoGUIField(laborCampPlaceReached))
 			{
-				boardFields[i] = laborCampFields[laborCampPlaceReached];
+				fields[i] = laborCampFields[laborCampPlaceReached];
 				laborCampPlaceReached++;
 				if(laborCampPlaceReached>laborCampFields.length)
 				{
@@ -189,7 +189,7 @@ public class FieldGenerator {
 			}
 			else if(i==gotoGUIField(refugePlaceReached))
 			{
-				boardFields[i] = refugeFields[refugePlaceReached];
+				fields[i] = refugeFields[refugePlaceReached];
 				refugePlaceReached++;
 				if(refugePlaceReached>refugeFields.length)
 				{
@@ -209,7 +209,7 @@ public class FieldGenerator {
 	 * Initialize the background colors in the GUI
 	 * @return bgColor array
 	 */
-	public void initbgcolor()
+	public static void initbgcolor()
 	{
 		int fieldNrReached = 0;
 		for(int i = 0;i<40;i++)
@@ -229,7 +229,7 @@ public class FieldGenerator {
 	 * Initialize the text colors in the GUI
 	 * @return fgColor array
 	 */
-	public void initfgcolor()
+	public static void initfgcolor()
 	{	int fieldNrReached = 0;
 	for(int i = 0;i<40;i++)
 	{
@@ -248,20 +248,20 @@ public class FieldGenerator {
 	 * @param Nr
 	 * @return
 	 */
-	public int gotoGUIField(int Nr)
+	public static int gotoGUIField(int Nr)
 	{
 		return (fieldsInUse[Nr]);
 	}
 
-	public Field getBoardFields(int Nr) {
-		return boardFields[Nr];
+	public static Field getfields(int Nr) {
+		return fields[Nr];
 	}
 
 	public Color getBgColors(int Nr) {
 		return bgColors[Nr];
 	}
 
-	public Color getFgColors(int Nr) {
+	public static Color getFgColors(int Nr) {
 		return fgColors[Nr];
 	}
 	
