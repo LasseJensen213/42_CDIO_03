@@ -237,7 +237,7 @@ public class FieldGenerator {
 		fgColors[i]=Color.BLACK;
 		if(fieldsInUse[fieldNrReached]==i)
 		{
-			fgColors[i]=Color.GREEN;
+			fgColors[i]=Color.BLACK;
 			fieldNrReached++;
 		}
 

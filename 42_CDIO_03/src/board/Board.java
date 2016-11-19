@@ -68,8 +68,8 @@ public class Board {
 			
 		}
 		GUI.create(fields);
-		System.out.println("You suck");
-		GUI.showMessage("You suck");
+		System.out.println("IT'S ALIVE");
+		GUI.showMessage("IT'S ALIVE");
 		
 		
 	}
