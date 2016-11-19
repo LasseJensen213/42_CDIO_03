@@ -63,9 +63,9 @@ public class Board {
 			
 			Color bgColor = FieldGenerator.getBgColors(i);
 			Color fgColor = FieldGenerator.getFgColors(i);
-			fields[i]= new Tax.Builder().setTitle(title).setDescription(descr).setSubText(subtext).
+			fields[i]= new Tax.Builder().setTitle(title).setDescription(subtext).setSubText(descr).
 					setBgColor(bgColor).setFgColor(fgColor).build();
-			
+			System.out.println("Generating " +  title + "..");
 		}
 		GUI.create(fields);
 		System.out.println("IT'S ALIVE");
