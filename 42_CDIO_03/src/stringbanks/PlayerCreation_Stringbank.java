@@ -1,6 +1,6 @@
 package stringbanks;
 
-public class PlayerManager_Stringbank {
+public class PlayerCreation_Stringbank {
 
 	
 	//Messages used by PlayerManager class

@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import desktop_resources.GUI;
+import player.Player;
 
 public class BoardGameGUI {
 
@@ -75,5 +76,15 @@ public class BoardGameGUI {
 	{
 		GUI.showMessage("GAME RULES");
 	}
+	
+	
+	
+	public void updatePlayerBalance(String name, int newBalance)
+	{
+		GUI.setBalance(name, newBalance);
+	}
+	
+	
+	
 
 }

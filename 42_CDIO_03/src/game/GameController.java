@@ -19,7 +19,6 @@ public class GameController {
 		diceCup = new DiceManager(2,6);
 		gameBoard = new Board();
 		gameGUI = new BoardGameGUI();
-		pNr = 0;
 		
 	}
 	
@@ -27,6 +26,12 @@ public class GameController {
 	{
 		
 		playerManager.initPlayers(); //Laver alle spillerne	
+		pNr = 0;
+		
+		while(true)
+		{
+			if(gameGUI.)
+		}
 		
 		
 	}
