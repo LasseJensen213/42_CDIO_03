@@ -40,7 +40,9 @@ public abstract class Field {
 		this.subtext = subtext;
 	}
 
-	abstract void landOnField(Player player);
+	public abstract void landOnField(Player player);
+	
+	public abstract void freeOwner(Player player);
 
 	@Override
 	public String toString() {

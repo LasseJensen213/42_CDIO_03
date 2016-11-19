@@ -72,6 +72,11 @@ public class Tax extends Field{
 	{
 		return super.toString()+" Type: "+this.getClass().getName()+" Tax: "+taxAmount;
 	}
+
+	@Override
+	public void freeOwner(Player player) {
+		
+	}
 	
 	
 }
