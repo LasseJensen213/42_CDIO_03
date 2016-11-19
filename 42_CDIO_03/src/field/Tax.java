@@ -2,12 +2,12 @@ package field;
 import desktop_resources.GUI;
 import player.Player;
 public class Tax extends Field{
-	private int taxAmount;;
+	private int taxAmount;
 	private int taxRate;
 	
-	public Tax(String descr, String subtext, int taxAmount, int taxRate)
+	public Tax(String title, String descr, String subtext, int taxAmount, int taxRate)
 	{
-		super(descr, subtext);
+		super(title, descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}

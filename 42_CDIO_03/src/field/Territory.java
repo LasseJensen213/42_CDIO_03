@@ -9,9 +9,9 @@ public class Territory extends Ownable {
 
 	
 	
-	public Territory(String descr, String subtext,int price, int rent)
+	public Territory(String title, String descr, String subtext,int price, int rent)
 	{
-		super(descr, subtext, price);
+		super(title, descr, subtext, price);
 		this.rent = rent;
 	}
 
