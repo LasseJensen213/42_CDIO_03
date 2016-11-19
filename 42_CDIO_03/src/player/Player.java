@@ -1,9 +1,12 @@
 package player;
 
+import java.awt.Color;
 
+import desktop_codebehind.Car;
 
 public class Player 
 {
+	private Car car;
 	private String name;
 	private Account account;
 	private boolean broke;
@@ -16,7 +19,8 @@ public class Player
 	{
 		this.name = name;
 		this.broke = false;
-		Account account = new Account(30000);
+		account = new Account(30000);
+		car = new Car.Builder().build();//Default random coloured car
 		this.playerPos = 1;
 	}
 
@@ -80,6 +84,16 @@ public class Player
 	public void setDiceResult(int diceResult)
 	{
 		this.lastDiceResult = diceResult;
+	}
+	
+	public Car getCar()
+	{
+		return car;
+	}
+	
+	public void setCar(Color color)
+	{
+		car = new Car.Builder().primaryColor(color).build();
 	}
 	
 	
