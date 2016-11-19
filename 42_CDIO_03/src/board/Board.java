@@ -1,6 +1,8 @@
 package board;
 
 import java.awt.Color;
+
+import desktop_resources.GUI;
 import field.*;
 
 import stringbanks.*;
@@ -135,7 +137,7 @@ public class Board {
 	}
 
 
-	public void initilizeFields()
+	public void initializeFields()
 	{
 		int territoryPlaceReached = 0;
 		int fleetPlaceReached = 0;
@@ -144,6 +146,10 @@ public class Board {
 		int laborCampPlaceReached = 0;
 		for(int i = 0;i<fields.length;i++)
 		{
+			if(i==0)
+			{
+				
+			}
 			if(i==territoryPlace[territoryPlaceReached])
 			{
 				fields[i] =	territoryFields[territoryPlaceReached];
