@@ -4,9 +4,9 @@ import player.Player;
 
 public class Fleet extends Ownable{
 	
-	public Fleet(String descr, String subtext,int price)
+	public Fleet(String title,String descr, String subtext,int price)
 	{
-		super(descr,subtext,price);
+		super(title,descr,subtext,price);
 		
 	}
 

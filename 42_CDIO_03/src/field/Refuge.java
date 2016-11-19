@@ -7,9 +7,9 @@ public class Refuge extends Field {
 	private int receive;
 
 	//Constructor
-	public Refuge(String descr, String subtext, int receive)
+	public Refuge(String title, String descr, String subtext, int receive)
 	{
-		super(descr, subtext);
+		super(title, descr, subtext);
 		this.receive = receive;
 	}
 

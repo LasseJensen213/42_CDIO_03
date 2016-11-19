@@ -12,9 +12,9 @@ public class LaborCamp extends Ownable {
 	private int baseRent;
 
 	
-	public LaborCamp(String descr, String subtext,int price, int baseRent)
+	public LaborCamp(String title, String descr, String subtext,int price, int baseRent)
 	{
-		super(descr, subtext, price);
+		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
 	}
 	

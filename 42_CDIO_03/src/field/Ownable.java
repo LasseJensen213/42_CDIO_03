@@ -5,9 +5,9 @@ public abstract class Ownable extends Field{
 	private Player owner;
 	
 		
-	public Ownable(String descr, String subtext,int price)
+	public Ownable(String title, String descr, String subtext,int price)
 	{
-		super(descr,subtext);
+		super(title,descr,subtext);
 		this.price = price;
 	}
 	
