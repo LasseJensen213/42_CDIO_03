@@ -1,11 +1,7 @@
 package player;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Map;
-
-import stringbanks.PlayerCreation_Stringbank;
 
 import desktop_resources.GUI;
 import gui.PlayerCreationGUI;
@@ -14,7 +10,7 @@ public class PlayerManager {
 
 	private ArrayList<Player>playerList;
 	private PlayerCreationGUI playerCreateGUI;
-	private Map<String,Color>colorMap;
+
 	
 	private int nPlayers;
 	private int winningPlayer;
@@ -24,14 +20,7 @@ public class PlayerManager {
 		this.playerList = new ArrayList<Player>();
 		this.playerCreateGUI = new PlayerCreationGUI();	
 		
-		//"String comes in, color comes out. You can't explain that!" - Bill O'Reilly
-				colorMap.put("Black", Color.black);
-				colorMap.put("Blue", Color.blue);
-				colorMap.put("Green", Color.green);
-				colorMap.put("Red", Color.red);
-				colorMap.put("Yellow", Color.yellow);
-				colorMap.put("White",Color.white);
-				colorMap.put("Pink", Color.pink);
+	
 	}
 
 	public void setNPlayers(int nPlayers)
@@ -72,7 +61,7 @@ public class PlayerManager {
 			String name = playerCreateGUI.chooseName(this);
 			String color = playerCreateGUI.chooseColor();//Chooses the color for the car
 			addPlayer(name);
-			playerList.get(i).setCar(colorMap.get(color));
+			playerList.get(i).setCar(playerCreateGUI.getColor(color));
 			playerCreateGUI.addPlayerToBoard(playerList.get(i));
 			
 		}

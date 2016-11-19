@@ -13,11 +13,20 @@ import stringbanks.PlayerCreation_Stringbank;
 public class PlayerCreationGUI {
 
 	private ArrayList<String>availableColors;
+	private Map<String,Color>colorMap;//"String comes in, color comes out. You can't explain that!" - Bill O'Reilly
+	private Color[] colors;
+	
 	
 	public PlayerCreationGUI()
 	{
 		this.availableColors = new ArrayList<String>(
 				Arrays.asList("Black","Blue", "Green","Red", "Yellow","White","Pink"));
+		this.colors = new Color[]{Color.black, Color.blue,Color.green, Color.red, Color.yellow, Color.white, Color.pink};
+		
+		for(int i = 0; i<colors.length;i++)
+		{
+			colorMap.put(PlayerCreation_Stringbank.getColor(i), colors[i]);
+		}
 		
 		
 	}
@@ -48,7 +57,9 @@ public class PlayerCreationGUI {
 	
 	public String chooseColor()
 	{
-		String color = GUI.getUserSelection("PICK COLOR", availableColors.toArray(new String[availableColors.size()]));
+		String color = GUI.getUserSelection(PlayerCreation_Stringbank.getMsg(4),
+											availableColors.toArray(new String[availableColors.size()]));
+		
 		availableColors.remove(color); //removes the color as an option, so everyone gets a unique color
 		return color;
 	}
@@ -66,4 +77,8 @@ public class PlayerCreationGUI {
 		return Integer.parseInt(GUI.getUserSelection(PlayerCreation_Stringbank.getMsg(0), new String[]{"2","3","4","5","6"}));
 	}
 
+	public Color getColor(String color)
+	{
+		return colorMap.get(color);
+	}
 }

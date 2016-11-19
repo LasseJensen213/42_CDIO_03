@@ -8,13 +8,20 @@ import player.Player;
 
 public class BoardGameGUI {
 
-	
+	/**
+	 * Start menu
+	 * @return
+	 */
 	public String menu()
 	{
 		String[] options = {"New game","Rules of the game","Close"};
 		return GUI.getUserSelection("MENU MSG", options);
 	}
 	
+	/**
+	 * The menu that shows at the start of a players turn
+	 * @return
+	 */
 	public String preRollMenu()
 	{
 		String[] options = {"Roll dice","Back to menu"};
