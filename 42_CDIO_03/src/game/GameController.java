@@ -10,7 +10,7 @@ public class GameController {
 	private DiceManager diceCup;
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
-	private int dice1, dice2;
+	private int dice1, dice2; //De to resultater bruges til GUI'en
 	private int pNr; //Hvis tur det er.
 	
 	public GameController()
@@ -39,7 +39,7 @@ public class GameController {
 		playerManager.get(pNr).setFleetsOwned(0);
 		playerManager.get(pNr).setLaborOwned(0);
 		playerManager.get(pNr).getAccount().setBalance(0);
-		//TODO: All the fields he owned will now be free
+		//TODO: All the fields he owned will now be freed
 
 	}
 	

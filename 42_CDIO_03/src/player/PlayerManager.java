@@ -1,9 +1,6 @@
 package player;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
-import desktop_resources.GUI;
 import gui.PlayerCreationGUI;
 
 public class PlayerManager {
@@ -11,7 +8,6 @@ public class PlayerManager {
 	private ArrayList<Player>playerList;
 	private PlayerCreationGUI playerCreateGUI;
 
-	
 	private int nPlayers;
 	private int winningPlayer;
 	
