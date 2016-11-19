@@ -3,6 +3,7 @@ import dice.DiceManager;
 import gui.BoardGameGUI;
 import player.PlayerManager;
 import board.Board;
+import desktop_resources.GUI;
 
 public class GameController {
 	
@@ -27,7 +28,6 @@ public class GameController {
 		
 		playerManager.initPlayers(); //Laver alle spillerne	
 		pNr = 0;
-		
 		
 		
 	}

@@ -3,6 +3,7 @@ package gui;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import desktop_resources.GUI;
@@ -12,19 +13,18 @@ import stringbanks.PlayerCreation_Stringbank;
 
 public class PlayerCreationGUI {
 
-	private ArrayList<String>availableColors;
+	private ArrayList<String> availableColors;
 	private Map<String,Color>colorMap;//"String comes in, color comes out. You can't explain that!" - Bill O'Reilly
-	private Color[] colors;
+	private Color[] colors = {Color.black, Color.blue,Color.green, Color.red, Color.yellow, Color.white, Color.pink};
 	
 	
 	public PlayerCreationGUI()
 	{
-		this.availableColors = new ArrayList<String>(
-				Arrays.asList("Black","Blue", "Green","Red", "Yellow","White","Pink"));
-		this.colors = new Color[]{Color.black, Color.blue,Color.green, Color.red, Color.yellow, Color.white, Color.pink};
-		
+		availableColors = new ArrayList<String>();
+		colorMap = new HashMap<String,Color>();
 		for(int i = 0; i<colors.length;i++)
 		{
+			availableColors.add(PlayerCreation_Stringbank.getColor(i));
 			colorMap.put(PlayerCreation_Stringbank.getColor(i), colors[i]);
 		}
 		
@@ -57,8 +57,8 @@ public class PlayerCreationGUI {
 	
 	public String chooseColor()
 	{
-		String color = GUI.getUserSelection(PlayerCreation_Stringbank.getMsg(4),
-											availableColors.toArray(new String[availableColors.size()]));
+		String[] colorArr = availableColors.toArray(new String[]{});
+		String color = GUI.getUserSelection(PlayerCreation_Stringbank.getMsg(4),colorArr);
 		
 		availableColors.remove(color); //removes the color as an option, so everyone gets a unique color
 		return color;

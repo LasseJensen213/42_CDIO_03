@@ -46,4 +46,9 @@ public class PlayerCreation_Stringbank {
 	{
 		return colors[colorIndex];
 	}
+	
+	public static String[] getColors()
+	{
+		return colors;
+	}
 }

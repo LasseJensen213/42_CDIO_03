@@ -11,7 +11,7 @@ public class GUI_Controller {
 	public void controller()
 	{
 		gameBoard = new Board();
-		gameBoard.initilizeFields();
+		gameBoard.generateBoard();
 		while(true)
 		{
 			gameGUI = new BoardGameGUI();
@@ -22,8 +22,9 @@ public class GUI_Controller {
 				game.gameControl(); 
 				// når man hopper ud af denne metode er GUI'en 
 				//lukket ned så man skal starte den op igen
+				GUI.close();
 				gameBoard = new Board();
-				gameBoard.initilizeFields();
+				gameBoard.generateBoard();
 
 			}
 			else if(input.equals("Rules of the game"))

@@ -19,7 +19,7 @@ public class Player
 	{
 		this.name = name;
 		this.broke = false;
-		Account account = new Account(30000);
+		account = new Account(30000);
 		car = new Car.Builder().build();//Default random coloured car
 		this.playerPos = 1;
 	}
