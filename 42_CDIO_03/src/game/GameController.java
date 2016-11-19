@@ -28,10 +28,6 @@ public class GameController {
 		playerManager.initPlayers(); //Laver alle spillerne	
 		pNr = 0;
 		
-		while(true)
-		{
-			if(gameGUI.)
-		}
 		
 		
 	}
