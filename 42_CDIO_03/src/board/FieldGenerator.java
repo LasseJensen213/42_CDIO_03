@@ -73,7 +73,7 @@ public class FieldGenerator {
 	/**
 	 * initalizes the fleet fields
 	 */
-public static void initFleetFields()
+	public static void initFleetFields()
 	{
 		for(int i=0;i<fleetFields.length;i++)
 		{
@@ -146,52 +146,53 @@ public static void initFleetFields()
 
 		for(int i = 0;i<fields.length;i++)
 		{
-			if(i==0)
-			{
-
-			}
-			if(i==gotoGUIField(territoryPlace[territoryPlaceReached]))
+			int territoryNr = gotoGUIField(territoryPlace[territoryPlaceReached]-1);
+			int fleetNr = gotoGUIField(fleetPlace[fleetPlaceReached]-1);
+			int taxNr = gotoGUIField(taxPlace[taxPlaceReached]-1);
+			int laborCampNr = gotoGUIField(laborCampPlace[laborCampPlaceReached]-1);
+			int refugeNr = gotoGUIField(refugePlace[refugePlaceReached]-1);
+			if(i==territoryNr)
 			{
 				fields[i] = territoryFields[territoryPlaceReached];
 				territoryPlaceReached++;
 
-				if(territoryPlaceReached>territoryFields.length)
+				if(territoryPlaceReached==territoryFields.length)
 				{
 					territoryPlaceReached=0;
 				}
 			}
-			else if(i==gotoGUIField(fleetPlaceReached))
+			else if(i==fleetNr)
 			{
 				fields[i] = fleetFields[fleetPlaceReached];
 				fleetPlaceReached++;
-				if(fleetPlaceReached>fleetFields.length)
+				if(fleetPlaceReached==fleetFields.length)
 				{
 					fleetPlaceReached=0;
 				}
 			}
-			else if(i==gotoGUIField(taxPlaceReached))
+			else if(i==taxNr)
 			{
 				fields[i] = taxFields[taxPlaceReached];
 				taxPlaceReached++;
-				if(taxPlaceReached>taxFields.length)
+				if(taxPlaceReached==taxFields.length)
 				{
 					taxPlaceReached=0;
 				}
 			}
-			else if(i==gotoGUIField(laborCampPlaceReached))
+			else if(i==laborCampNr)
 			{
 				fields[i] = laborCampFields[laborCampPlaceReached];
 				laborCampPlaceReached++;
-				if(laborCampPlaceReached>laborCampFields.length)
+				if(laborCampPlaceReached==laborCampFields.length)
 				{
 					laborCampPlaceReached=0;
 				}
 			}
-			else if(i==gotoGUIField(refugePlaceReached))
+			else if(i==refugeNr)
 			{
 				fields[i] = refugeFields[refugePlaceReached];
 				refugePlaceReached++;
-				if(refugePlaceReached>refugeFields.length)
+				if(refugePlaceReached==refugeFields.length)
 				{
 					refugePlaceReached=0;
 				}
@@ -264,8 +265,12 @@ public static void initFleetFields()
 	public static Color getFgColors(int Nr) {
 		return fgColors[Nr];
 	}
-	
-	
-	
+
+
+	public static int getFieldsInUse(int Nr)
+	{
+		return fieldsInUse[Nr];
+	}
+
 
 }
