@@ -16,6 +16,7 @@ public class LaborCamp extends Ownable {
 	{
 		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
+
 	}
 	
 	@Override
