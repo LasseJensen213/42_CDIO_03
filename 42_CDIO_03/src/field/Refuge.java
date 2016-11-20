@@ -24,12 +24,14 @@ public class Refuge extends Field {
 	public void landOnField(Player p) {
 		p.getAccount().deposit(receive);
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return super.toString()+" Type: "+this.getClass().getName()+" Bonus: "+receive;
 	}
+
+
 
 	@Override
 	public void freeOwner(Player player) {	
@@ -37,3 +39,4 @@ public class Refuge extends Field {
 	}
 
 }
+
