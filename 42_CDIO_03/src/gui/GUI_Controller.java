@@ -4,7 +4,8 @@ import desktop_resources.GUI;
 import game.GameController;
 
 public class GUI_Controller {
-
+	private boolean testmode = true;
+	
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
@@ -13,9 +14,10 @@ public class GUI_Controller {
 		gameBoard = new Board();
 		gameGUI = new BoardGameGUI();
 	}
-	
-	public void mainMenuController()
+
+	public void mainMenuController(boolean state)
 	{
+		
 		gameBoard.generateBoard();
 		while(true)
 		{
@@ -24,7 +26,9 @@ public class GUI_Controller {
 			if(input.equals("New game"))
 			{
 				GameController game = new GameController();
+				game.testmode(state);
 				game.gameControl(); 
+				
 				// når man hopper ud af denne metode er GUI'en 
 				//lukket ned så man skal starte den op igen
 				GUI.close();
@@ -48,14 +52,24 @@ public class GUI_Controller {
 	{
 		while(true)
 		{
-			String input = gameGUI.preRollMenu();
-			
-			if(input.equals("Roll dice"))
+			if(testmode == true)
+			{
 				return true;
-			else if(gameGUI.confirmInput())
-				return false;
-		}				
+			}
+			else if(testmode ==false)
+			{	
+			String input = gameGUI.preRollMenu();
 
+				if(input.equals("Roll dice"))
+					return true;
+				else if(gameGUI.confirmInput())
+					return false;
+			}				
+		}
+	}
+
+	public void setTestmode(boolean testmode) {
+		this.testmode = testmode;
 	}
 
 
