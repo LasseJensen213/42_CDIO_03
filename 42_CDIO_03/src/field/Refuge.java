@@ -24,7 +24,7 @@ public class Refuge extends Field {
 	public void landOnField(Player p) {
 		p.getAccount().deposit(receive);
 	}
-	
+
 	@Override
 	public String toString()
 	{
