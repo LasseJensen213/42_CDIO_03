@@ -22,7 +22,7 @@ public class Field_Stringbank {
 	private static String secondSailTitle = "Second Sail";
 	private static String seaGroverTitle = "Sea Grover";
 	private static String theBuccaneersTitle = "The Buccaneers";
-	private static String privateerArmadeTitle = "Privateer Armade";
+	private static String privateerArmadeTitle = "Privateer Armada";
 	
 	//Labor Camp Titles
 	private static String mountainHutsTitle = "Huts in the mountain";

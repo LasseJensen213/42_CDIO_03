@@ -21,7 +21,7 @@ public class Player
 		this.broke = false;
 		account = new Account(30000);
 		car = new Car.Builder().build();//Default random coloured car
-		this.playerPos = 1;
+		this.playerPos = 0;
 	}
 
 	public String getName() {

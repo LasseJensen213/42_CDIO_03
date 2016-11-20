@@ -17,8 +17,15 @@ public class Fleet extends Ownable{
 	}
 
 	@Override
-	void landOnField(Player player) {
+	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void freeOwner(Player player) {
+		if(this.getOwner()==player)
+			this.setOwner(null);
 		
 	}
 	
