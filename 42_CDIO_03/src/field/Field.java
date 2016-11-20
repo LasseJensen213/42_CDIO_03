@@ -7,8 +7,8 @@ public abstract class Field {
 	
 	
 	String title; //Titel på selve feltet i GUI.
-	String descr; //Beskrivelse, der bruges til det store felt i midten
-	String subtext; //Beskrivelse i selve feltet i GUI
+	String descr; //Beskrivelse i selve feltet i GUI
+	String subtext; //Beskrivelse, der bruges til det store felt i midten
 	
 	public Field(String title, String descr,String subtext )
 	{
@@ -40,7 +40,12 @@ public abstract class Field {
 		this.subtext = subtext;
 	}
 
-	abstract void landOnField(Player player);
+	public abstract void landOnField(Player player);
+	/**
+	 * If the player corresponds to the owner, then the owner is set to null.
+	 * @param player
+	 */
+	public abstract void freeOwner(Player player);
 
 	@Override
 	public String toString() {

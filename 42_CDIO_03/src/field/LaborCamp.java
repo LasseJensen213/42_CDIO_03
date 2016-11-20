@@ -56,6 +56,13 @@ public class LaborCamp extends Ownable {
 		return super.toString()+" Type: "+this.getClass().getName()+" Base rent: "+baseRent;
 	}
 
+	@Override
+	public void freeOwner(Player player) {
+		if(this.getOwner()==player)
+			this.setOwner(null);
+		
+	}
+
 
 
 
