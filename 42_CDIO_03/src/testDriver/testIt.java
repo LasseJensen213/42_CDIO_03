@@ -5,7 +5,7 @@ public class testIt {
 
 	public static void main(String[] args) {
 		GUI_Controller controller = new GUI_Controller();
-		controller.controller();
+		controller.mainMenuController();
 
 	}
 

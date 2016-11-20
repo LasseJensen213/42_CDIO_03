@@ -8,9 +8,14 @@ public class GUI_Controller {
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
-	public void controller()
+	public GUI_Controller()
 	{
 		gameBoard = new Board();
+		gameGUI = new BoardGameGUI();
+	}
+	
+	public void mainMenuController()
+	{
 		gameBoard.generateBoard();
 		while(true)
 		{
@@ -38,8 +43,22 @@ public class GUI_Controller {
 			}
 		}
 	}
-	
-	
+
+	public boolean preRollMenuController()
+	{
+		while(true)
+		{
+			String input = gameGUI.preRollMenu();
+			
+			if(input.equals("Roll dice"))
+				return true;
+			else if(gameGUI.confirmInput())
+				return false;
+		}				
+
+	}
+
+
 
 
 

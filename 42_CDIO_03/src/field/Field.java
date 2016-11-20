@@ -41,7 +41,10 @@ public abstract class Field {
 	}
 
 	public abstract void landOnField(Player player);
-	
+	/**
+	 * If the player corresponds to the owner, then the owner is set to null.
+	 * @param player
+	 */
 	public abstract void freeOwner(Player player);
 
 	@Override
