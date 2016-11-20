@@ -109,11 +109,15 @@ public class PlayerManager {
 		int lastActivePlayer= 0;
 		for(int i = 0; i<nPlayers;i++)
 		{
-			if(activePlayers>1)
-				return false;
 			if(!playerList.get(i).isBroke())
+			{
 				lastActivePlayer = i;
 				activePlayers++;
+			}
+			if(activePlayers>1)
+			{
+				return false;
+			}
 		}
 		winningPlayer = lastActivePlayer;
 		return true;

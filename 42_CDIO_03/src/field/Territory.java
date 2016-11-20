@@ -66,4 +66,12 @@ public class Territory extends Ownable {
 	{
 		return super.toString()+" Type: "+this.getClass().getName()+" Rent: "+rent;
 	}
+
+
+	@Override
+	public void freeOwner(Player player) {
+		if(this.getOwner()==player)
+			this.setOwner(null);
+		
+	}
 }

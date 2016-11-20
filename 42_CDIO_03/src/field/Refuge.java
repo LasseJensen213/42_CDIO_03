@@ -20,7 +20,7 @@ public class Refuge extends Field {
 
 
 	//Actions happening when landing on field "Refuge"
-
+	@Override
 	public void landOnField(Player p) {
 		p.getAccount().deposit(receive);
 	}
@@ -31,4 +31,12 @@ public class Refuge extends Field {
 		return super.toString()+" Type: "+this.getClass().getName()+" Bonus: "+receive;
 	}
 
+
+
+	@Override
+	public void freeOwner(Player player) {	
+		
+	}
+
 }
+

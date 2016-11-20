@@ -3,6 +3,7 @@ package gui;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import board.FieldGenerator;
 import desktop_resources.GUI;
 import player.Player;
 
@@ -25,7 +26,7 @@ public class BoardGameGUI {
 	public String preRollMenu()
 	{
 		String[] options = {"Roll dice","Back to menu"};
-		return GUI.getUserButtonPressed("MENU MSG", options);
+		return GUI.getUserSelection("MENU MSG", options);
 	}
 	
 	public void showDiceRolling(int diceResult1, int diceResult2)
@@ -54,10 +55,10 @@ public class BoardGameGUI {
 			for(int k = 0; k<30;k++)
 			{
 				GUI.setDice(faceValue1, rotation1, x1, y1, faceValue2, rotation2, x2, y2);
-				rotation1 += 10;
-				rotation2 += 10;
+				rotation1 = (rotation1+10)%360;
+				rotation2 = (rotation2+10)%360;
 				try {
-					TimeUnit.MILLISECONDS.sleep(70);
+					TimeUnit.MILLISECONDS.sleep(17);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -71,7 +72,19 @@ public class BoardGameGUI {
 	public void movePlayerModel(String name, int playerPos, int diceResult)
 	{
 		//only moves the player on the board. Doesn't actually update their position
-		
+		for(int i = 0; i<diceResult; i++)
+		{
+			GUI.removeCar(FieldGenerator.getFieldsInUse(playerPos)+1, name);
+			playerPos = playerPos==21?1:(playerPos+1)%22;
+			GUI.setCar(FieldGenerator.getFieldsInUse(playerPos)+1, name);
+			try {
+				TimeUnit.MILLISECONDS.sleep(400);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 	}
 	
 	public boolean confirmInput()
