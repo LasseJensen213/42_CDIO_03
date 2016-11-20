@@ -66,6 +66,7 @@ public class PlayerCreationGUI {
 	
 	public void addPlayerToBoard(Player player)
 	{
+		//CHANGE WE CAN BELIEVE IN
 		String name = player.getName();
 		int balance = player.getAccount().getBalance();
 		GUI.addPlayer(name, balance, player.getCar() );
