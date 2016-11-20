@@ -50,12 +50,11 @@ public class GameController {
 			playerManager.get(pNr).setDiceResult(diceResult);
 			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(
 					playerManager.get(pNr).getPlayerPos())).landOnField(playerManager.get(pNr));
-
 			if(playerManager.checkIfBroke(pNr))
 			{
 				playerIsBroke(pNr);
 			}
-			gameGUI.updatePlayerBalance(playerManager.get(pNr).getName(), playerManager.get(pNr).getAccount().getBalance());
+			gameGUI.updatePlayerBalance(playerManager.getPlayerList());
 			pNr = playerManager.nextPlayer(pNr);
 			if(playerManager.checkForWinner())
 			{

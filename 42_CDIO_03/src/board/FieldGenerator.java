@@ -66,7 +66,7 @@ public class FieldGenerator {
 			String subtext = Field_Stringbank.getTerritorySubtextArray(i);
 			int price = territoryPrice[i];
 			int rent = territoryRent[i];
-			territoryFields[i] = new Territory(title,description,subtext,rent,price);
+			territoryFields[i] = new Territory(title,description,subtext,price,rent);
 		}
 	}
 

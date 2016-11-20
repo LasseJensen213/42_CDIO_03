@@ -24,10 +24,10 @@ public class Territory extends Ownable {
 
 	
 	@Override
-	public  void landOnField(Player p)
+	public  void landOnField(Player player)
 	{
 		Player owner = this.getOwner();
-		if(owner==null && p.getAccount().getBalance()>super.getPrice())
+		if(owner==null && player.getAccount().getBalance()>super.getPrice())
 		{
 			//Hvis feltet ingen ejer har
 			//Skal have mulighed for at købe, hvis han køber bliver 
@@ -38,24 +38,24 @@ public class Territory extends Ownable {
 				String input = GUI.getUserSelection("Message", options);
 				if(input.equals(options[0]))
 				{
-					this.setOwner(p);
-					p.getAccount().withdraw(this.getPrice());
+					this.setOwner(player);
+					player.getAccount().withdraw(this.getPrice());
 				}
 
 		}
-		else if(owner==p)
+		else if(this.getOwner().getName().equals(player.getName()))
 		{
 			//Hvis spilleren ejer feltet
 			//Sker der ikke noget
 			//dette skal være tomt
 		}
-		else
+		else if(!(owner==null))
 		{
 			//Hvis spilleren ikke ejer feltet
 			//Betaler automatisk renten
 			//owner skal så have pengene
 
-			p.getAccount().withdraw(rent);
+			player.getAccount().withdraw(rent);
 			owner.getAccount().deposit(rent);
 
 		}
@@ -70,7 +70,7 @@ public class Territory extends Ownable {
 
 	@Override
 	public void freeOwner(Player player) {
-		if(this.getOwner()==player)
+		if(this.getOwner().getName().equals(player.getName()))
 			this.setOwner(null);
 		
 	}

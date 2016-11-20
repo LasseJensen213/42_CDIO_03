@@ -31,11 +31,11 @@ public class LaborCamp extends Ownable {
 
 
 		}
-		else if(this.getOwner()==player)
+		else if(this.getOwner().getName().equals(player.getName()))
 		{
 
 		}
-		else
+		else if(!(this.getOwner()==null))
 		{
 			int diceTotal = player.getDiceResult();
 			int nLaborCampsOwned = this.getOwner().getLaborOwned();
@@ -59,7 +59,7 @@ public class LaborCamp extends Ownable {
 
 	@Override
 	public void freeOwner(Player player) {
-		if(this.getOwner()==player)
+		if(this.getOwner().getName().equals(player.getName()))
 			this.setOwner(null);
 		
 	}
