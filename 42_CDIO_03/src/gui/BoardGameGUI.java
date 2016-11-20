@@ -105,6 +105,15 @@ public class BoardGameGUI {
 	{
 		GUI.setBalance(name, newBalance);
 	}
+
+	public void setSleep(int sleep) {
+		this.sleep = sleep;
+	}
+
+	public void setRotateNr(int rotateNr) {
+		this.rotateNr = rotateNr;
+	}
+	
 	
 	
 	

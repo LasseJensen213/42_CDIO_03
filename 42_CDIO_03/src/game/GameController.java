@@ -6,6 +6,7 @@ import player.PlayerManager;
 import board.Board;
 import board.FieldGenerator;
 import desktop_resources.GUI;
+import board.FieldGenerator;
 
 public class GameController {
 
@@ -60,6 +61,8 @@ public class GameController {
 			if(playerManager.checkForWinner())
 			{
 				//TODO: Vinder besked?
+				String besked = playerManager.get(pNr).getName() + " har vundet!";
+				GUI.showMessage(besked);
 				break;
 			}
 
@@ -82,6 +85,7 @@ public class GameController {
 			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(i)).freeOwner(playerManager.get(pNr));
 		}
 
+		GUI.removeCar(FieldGenerator.getFieldsInUse(playerManager.get(pNr).getPlayerPos())+1, playerManager.get(pNr).getName());
 	}
 
 	public void updatePlayerPos(int pNr, int diceResult)
@@ -93,6 +97,25 @@ public class GameController {
 			if(playerManager.get(pNr).getPlayerPos()==0)
 				i--;
 		}
+	}
+	
+	public void testmode(boolean statement)
+	{
+		if(statement==true)
+		{
+			GUI.showMessage("TESTMODE ON");
+			gameGUI.setRotateNr(1);
+			gameGUI.setSleep(0);
+			gCtrl.setTestmode(true);
+		}
+		else if (statement==false)
+		{
+			System.out.println("TESTMODE OFF");
+			gameGUI.setRotateNr(30);
+			gameGUI.setSleep(400);
+			gCtrl.setTestmode(false);
+		}
+		
 	}
 
 
