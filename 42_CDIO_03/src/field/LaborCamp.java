@@ -11,14 +11,14 @@ public class LaborCamp extends Ownable {
 
 	private int baseRent;
 
-	
+
 	public LaborCamp(String title, String descr, String subtext,int price, int baseRent)
 	{
 		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
 
 	}
-	
+
 	@Override
 	public void landOnField(Player player){
 		if(super.getOwner() == null && player.getAccount().getBalance()>this.getPrice()){
@@ -44,13 +44,13 @@ public class LaborCamp extends Ownable {
 		}
 
 	}
-	
+
 	@Override
 	public int getRent()
 	{
 		return this.baseRent;
 	}
-	
+
 	@Override
 	public String toString()
 	{
@@ -59,9 +59,10 @@ public class LaborCamp extends Ownable {
 
 	@Override
 	public void freeOwner(Player player) {
-		if(this.getOwner().getName().equals(player.getName()))
-			this.setOwner(null);
-		
+		if(!(this.getOwner()==null)){
+			if(this.getOwner().getName().equals(player.getName()))
+				this.setOwner(null);
+		}
 	}
 
 

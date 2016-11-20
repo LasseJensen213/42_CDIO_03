@@ -7,22 +7,22 @@ public class Territory extends Ownable {
 
 	private int rent;
 
-	
-	
+
+
 	public Territory(String title, String descr, String subtext,int price, int rent)
 	{
 		super(title, descr, subtext, price);
 		this.rent = rent;
 	}
 
-	
+
 	@Override
 	public int getRent()
 	{
 		return rent;
 	}
 
-	
+
 	@Override
 	public  void landOnField(Player player)
 	{
@@ -33,14 +33,14 @@ public class Territory extends Ownable {
 			//Skal have mulighed for at købe, hvis han køber bliver 
 			//Hvis feltet ingen ejer har og spilleren har penge nok
 			//Skal have mulighed for at købe
-			
-				String options[] = {"Buy","Skip"};
-				String input = GUI.getUserSelection("Message", options);
-				if(input.equals(options[0]))
-				{
-					this.setOwner(player);
-					player.getAccount().withdraw(this.getPrice());
-				}
+
+			String options[] = {"Buy","Skip"};
+			String input = GUI.getUserSelection("Message", options);
+			if(input.equals(options[0]))
+			{
+				this.setOwner(player);
+				player.getAccount().withdraw(this.getPrice());
+			}
 
 		}
 		else if(this.getOwner().getName().equals(player.getName()))
@@ -60,7 +60,7 @@ public class Territory extends Ownable {
 
 		}
 	}
-	
+
 	@Override
 	public String toString()
 	{
@@ -70,8 +70,12 @@ public class Territory extends Ownable {
 
 	@Override
 	public void freeOwner(Player player) {
-		if(this.getOwner().getName().equals(player.getName()))
-			this.setOwner(null);
-		
+		if(!(this.getOwner()==null)){
+			if(this.getOwner().getName().equals(player.getName()))
+			{
+				this.setOwner(null);
+			}
+		}
+
 	}
 }
