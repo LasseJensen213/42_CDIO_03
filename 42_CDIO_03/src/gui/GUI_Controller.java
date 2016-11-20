@@ -4,7 +4,8 @@ import desktop_resources.GUI;
 import game.GameController;
 
 public class GUI_Controller {
-
+	private boolean testmode = true;
+	
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
@@ -13,7 +14,7 @@ public class GUI_Controller {
 		gameBoard = new Board();
 		gameGUI = new BoardGameGUI();
 	}
-	
+
 	public void mainMenuController()
 	{
 		gameBoard.generateBoard();
@@ -49,13 +50,18 @@ public class GUI_Controller {
 		while(true)
 		{
 			String input = gameGUI.preRollMenu();
-			
-			if(input.equals("Roll dice"))
+			if(testmode == true)
+			{
 				return true;
-			else if(gameGUI.confirmInput())
-				return false;
-		}				
-
+			}
+			else if(testmode ==false)
+			{
+				if(input.equals("Roll dice"))
+					return true;
+				else if(gameGUI.confirmInput())
+					return false;
+			}				
+		}
 	}
 
 

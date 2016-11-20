@@ -49,7 +49,7 @@ public class GameController {
 			updatePlayerPos(pNr,diceResult);
 			playerManager.get(pNr).setDiceResult(diceResult);
 			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(
-					playerManager.get(0).getPlayerPos())).landOnField(playerManager.get(pNr));
+					playerManager.get(pNr).getPlayerPos())).landOnField(playerManager.get(pNr));
 
 			if(playerManager.checkIfBroke(pNr))
 			{

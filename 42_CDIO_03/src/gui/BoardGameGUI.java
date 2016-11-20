@@ -8,6 +8,8 @@ import desktop_resources.GUI;
 import player.Player;
 
 public class BoardGameGUI {
+	private int sleep = 0; //Number of ms the system sleeps 400 ms is normal.
+	private int rotateNr = 1; //Determines the number of times the dice rotates. 30 is normal.
 
 	/**
 	 * Start menu
@@ -52,7 +54,7 @@ public class BoardGameGUI {
 		{
 			faceValue1 = rand.nextInt(6)+1;
 			faceValue2 = rand.nextInt(6)+1;
-			for(int k = 0; k<30;k++)
+			for(int k = 0; k<rotateNr;k++)
 			{
 				GUI.setDice(faceValue1, rotation1, x1, y1, faceValue2, rotation2, x2, y2);
 				rotation1 = (rotation1+10)%360;
@@ -78,7 +80,7 @@ public class BoardGameGUI {
 			playerPos = playerPos==21?1:(playerPos+1)%22;
 			GUI.setCar(FieldGenerator.getFieldsInUse(playerPos)+1, name);
 			try {
-				TimeUnit.MILLISECONDS.sleep(400);
+				TimeUnit.MILLISECONDS.sleep(sleep);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
