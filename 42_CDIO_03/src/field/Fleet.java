@@ -23,7 +23,7 @@ public class Fleet extends Ownable{
 	}
 
 	@Override
-	public void freeOwner(Player player) {
+	public void freeOwner(Player player, int pos) {
 		if(this.getOwner()==player)
 			this.setOwner(null);
 		

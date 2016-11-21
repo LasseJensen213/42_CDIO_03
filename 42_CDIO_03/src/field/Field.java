@@ -45,7 +45,7 @@ public abstract class Field {
 	 * If the player corresponds to the owner, then the owner is set to null.
 	 * @param player
 	 */
-	public abstract void freeOwner(Player player);
+	public abstract void freeOwner(Player player, int pos);
 
 	@Override
 	public String toString() {

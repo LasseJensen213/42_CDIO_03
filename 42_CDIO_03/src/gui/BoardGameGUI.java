@@ -124,7 +124,12 @@ public class BoardGameGUI {
 	
 	public void setOwner(int fieldNumber, String name)
 	{
-		GUI.setOwner(fieldNumber, name);
+		GUI.setOwner(FieldGenerator.getFieldsInUse(fieldNumber)+1, name);
+	}
+	
+	public void removeOwner(int fieldNumber)
+	{
+		GUI.removeOwner(fieldNumber+1);
 	}
 	
 	

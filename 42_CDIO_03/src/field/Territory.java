@@ -1,5 +1,7 @@
 package field;
+import board.FieldGenerator;
 import desktop_resources.GUI;
+import gui.BoardGameGUI;
 import player.Player;
 
 
@@ -26,6 +28,7 @@ public class Territory extends Ownable {
 	@Override
 	public  void landOnField(Player player)
 	{
+		BoardGameGUI gui = new BoardGameGUI();
 		Player owner = this.getOwner();
 		if(owner==null && player.getAccount().getBalance()>super.getPrice())
 		{
@@ -39,6 +42,7 @@ public class Territory extends Ownable {
 			if(input.equals(options[0]))
 			{
 				this.setOwner(player);
+				gui.setOwner(player.getPlayerPos(), player.getName());
 				player.getAccount().withdraw(this.getPrice());
 			}
 
@@ -69,10 +73,12 @@ public class Territory extends Ownable {
 
 
 	@Override
-	public void freeOwner(Player player) {
+	public void freeOwner(Player player, int pos) {
+		BoardGameGUI gui = new BoardGameGUI();
 		if(!(this.getOwner()==null)){
 			if(this.getOwner().getName().equals(player.getName()))
 			{
+				gui.removeOwner(pos);
 				this.setOwner(null);
 			}
 		}

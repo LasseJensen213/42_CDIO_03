@@ -34,7 +34,7 @@ public class Refuge extends Field {
 
 
 	@Override
-	public void freeOwner(Player player) {	
+	public void freeOwner(Player player, int pos) {	
 		
 	}
 

@@ -58,7 +58,7 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	public void freeOwner(Player player) {
+	public void freeOwner(Player player, int pos) {
 		if(!(this.getOwner()==null)){
 			if(this.getOwner().getName().equals(player.getName()))
 				this.setOwner(null);

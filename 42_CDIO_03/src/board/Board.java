@@ -5,7 +5,7 @@ import java.awt.Color;
 
 import board.FieldGenerator;
 import desktop_fields.Field;
-import desktop_fields.Tax;
+import desktop_fields.Street;
 import desktop_resources.GUI;
 
 import stringbanks.Field_Stringbank;
@@ -63,7 +63,7 @@ public class Board {
 			
 			Color bgColor = FieldGenerator.getBgColors(i);
 			Color fgColor = FieldGenerator.getFgColors(i);
-			fields[i]= new Tax.Builder().setTitle(subtext).setDescription(title).setSubText(descr).
+			fields[i]= new Street.Builder().setTitle(subtext).setDescription(title).setSubText(descr).
 					setBgColor(bgColor).setFgColor(fgColor).build();
 			System.out.println("Generating " +  title + "..");
 		}
