@@ -1,7 +1,6 @@
 package player;
 
 import java.awt.Color;
-
 import desktop_codebehind.Car;
 
 public class Player 
@@ -91,6 +90,11 @@ public class Player
 		return car;
 	}
 	
+	
+	/**
+	 * Creates new car object with the color that's input
+	 * @param color
+	 */
 	public void setCar(Color color)
 	{
 		car = new Car.Builder().primaryColor(color).build();

@@ -3,6 +3,7 @@ package field;
 import desktop_resources.GUI;
 import gui.BoardGameGUI;
 import player.Player;
+import stringbanks.Game_Stringbank;
 
 public class Fleet extends Ownable{
 
@@ -17,25 +18,28 @@ public class Fleet extends Ownable{
 	@Override
 	public int getRent() {
 		// TODO Auto-generated method stub
+		if(this.getOwner()==null)
+			return 500;
+		
 		return (int)(500*Math.pow(2,this.getOwner().getFleetsOwned()-1));
 	}
 
 	@Override
 	public void landOnField (Player p) 
 	{
-		GUI.showMessage("You landed on fleet");
 		BoardGameGUI gui = new BoardGameGUI();
 		Player owner = this.getOwner();
-		if(owner==null && p.getAccount().getBalance()>super.getPrice())
+		if(owner==null )
 		{
-			//Hvis feltet ingen ejer har
-			//Skal have mulighed for at købe, hvis han køber bliver 
-			//Hvis feltet ingen ejer har og spilleren har penge nok
-			//Skal have mulighed for at købe
-			
-				String options[] = {"Buy","Skip"};
-				String input = GUI.getUserSelection("Message", options);
-				if(input.equals(options[0]))
+			if(p.getAccount().getBalance()>super.getPrice())
+			{
+				//Hvis feltet ingen ejer har
+				//Skal have mulighed for at købe, hvis han køber bliver 
+				//Hvis feltet ingen ejer har og spilleren har penge nok
+				//Skal have mulighed for at købe
+
+				String input = gui.buyMenu(this.getSubtext(), this.getPrice(), this.getRent());
+				if(input.equals(Game_Stringbank.getFieldMsg(0)))
 				{
 					this.setOwner(p);
 					int alreadyOwned = p.getFleetsOwned();
@@ -44,26 +48,28 @@ public class Fleet extends Ownable{
 					p.getAccount().withdraw(this.getPrice());
 				}
 
+			}
 		}
-		else if(this.getOwner()==null)
+		else if(this.getOwner()==p)
 		{
-			
+			gui.showYourFieldMsg(this.getSubtext());
 		}
 		else if(this.getOwner()!=p){
 			int FleetsOwned = this.getOwner().getFleetsOwned();
-			FleetsOwned = (int)(500*Math.pow(2.0, (double)FleetsOwned-1));
-//			switch(FleetsOwned) {
-//			case 1: FleetsOwned = 500 ;  
-//			break;
-//			case 3: FleetsOwned = 1000 ;  
-//			break;
-//			case 2: FleetsOwned = 2000 ;  
-//			break;
-//			case 4: FleetsOwned = 4000 ;  
-//			break;
-//			}
+			FleetsOwned = (int)(500*Math.pow(2, FleetsOwned-1));
+			//			switch(FleetsOwned) {
+			//			case 1: FleetsOwned = 500 ;  
+			//			break;
+			//			case 3: FleetsOwned = 1000 ;  
+			//			break;
+			//			case 2: FleetsOwned = 2000 ;  
+			//			break;
+			//			case 4: FleetsOwned = 4000 ;  
+			//			break;
+			//			}
 			p.getAccount().withdraw(FleetsOwned);
 			this.getOwner().getAccount().deposit(FleetsOwned);
+			gui.showOpponentFieldMsg(this.getOwner().getName(), FleetsOwned);
 		}
 
 
@@ -71,8 +77,15 @@ public class Fleet extends Ownable{
 
 	@Override
 	public void freeOwner(Player player, int pos) {
-		if(this.getOwner()==player)
-			this.setOwner(null);
+		BoardGameGUI gui = new BoardGameGUI();
+		if(!(this.getOwner()==null)){
+			if(this.getOwner().getName().equals(player.getName()))
+			{
+				gui.removeOwner(pos);
+				this.setOwner(null);
+				this.setDescr(String.format("Price: %d", this.getPrice()));
+			}
+		}
 
 	}
 

@@ -3,10 +3,9 @@ package gui;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
+import stringbanks.Game_Stringbank;
 import board.FieldGenerator;
 import desktop_resources.GUI;
-import field.Ownable;
 import player.Player;
 
 public class BoardGameGUI {
@@ -19,18 +18,20 @@ public class BoardGameGUI {
 	 */
 	public String menu()
 	{
-		String[] options = {"New game","Rules of the game","Close"};
-		return GUI.getUserSelection("MENU MSG", options);
+		String[] options = {Game_Stringbank.getMainMenuMsg(1),Game_Stringbank.getMainMenuMsg(3),
+							Game_Stringbank.getMainMenuMsg(2)};
+		
+		return GUI.getUserSelection(Game_Stringbank.getMainMenuMsg(0), options);
 	}
 
 	/**
 	 * The menu that shows at the start of a players turn
 	 * @return
 	 */
-	public String preRollMenu()
+	public String preRollMenu(String name)
 	{
-		String[] options = {"Roll dice","Back to menu"};
-		return GUI.getUserSelection("MENU MSG", options);
+		String[] options = {Game_Stringbank.getPreRollMsg(1),Game_Stringbank.getPreRollMsg(2)};
+		return GUI.getUserSelection(String.format(Game_Stringbank.getPreRollMsg(0), name), options);
 	}
 
 	public void showDiceRolling(int diceResult1, int diceResult2)
@@ -62,7 +63,7 @@ public class BoardGameGUI {
 				rotation1 = (rotation1+10)%360;
 				rotation2 = (rotation2+10)%360;
 				try {
-					TimeUnit.MILLISECONDS.sleep(0);
+					TimeUnit.MILLISECONDS.sleep(17);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -73,6 +74,15 @@ public class BoardGameGUI {
 
 	}
 
+	/**
+	 * Moves the player model around on the board and skips the start field
+	 * This does not update the player's actual position in the game
+	 * 
+	 * @param name
+	 * @param playerPos the players starting position
+	 * @param diceResult how many fields the player moves forward
+	 */
+	
 	public void movePlayerModel(String name, int playerPos, int diceResult)
 	{
 		//only moves the player on the board. Doesn't actually update their position
@@ -94,16 +104,21 @@ public class BoardGameGUI {
 
 	public boolean confirmInput()
 	{
-		return GUI.getUserLeftButtonPressed("CONFIRM INPUT MSG", "Yes", "No");
+		return GUI.getUserLeftButtonPressed(Game_Stringbank.getConfirmMsg(0), Game_Stringbank.getConfirmMsg(1), 
+											Game_Stringbank.getConfirmMsg(2));
 	}
 
 	public void showRules()
 	{
-		GUI.showMessage("GAME RULES");
+		GUI.showMessage(Game_Stringbank.getMainMenuMsg(4));
 	}
 
 
-
+/**
+ * Updates all the players' balances 
+ * Is normally used after each player's turn.
+ * @param playerList
+ */
 	public void updatePlayerBalance(ArrayList<Player> playerList)
 	{
 		for(int i = 0; i<playerList.size();i++)
@@ -122,7 +137,6 @@ public class BoardGameGUI {
 	}
 
 
-
 	public void setOwner(int fieldNumber, String name)
 	{
 		int translate = FieldGenerator.getFieldsInUse(fieldNumber)+1;
@@ -134,9 +148,47 @@ public class BoardGameGUI {
 
 	public void removeOwner(int fieldNumber)
 	{
-		GUI.removeOwner(fieldNumber+1);
+		GUI.removeOwner(FieldGenerator.getFieldsInUse(fieldNumber)+1);
 	}
 
 
 
+	public String buyMenu(String fieldType, int price, int rent)
+	{
+		String[] options = {Game_Stringbank.getFieldMsg(0),Game_Stringbank.getFieldMsg(1)};
+		return GUI.getUserSelection(String.format(Game_Stringbank.getFieldMsg(2), fieldType,price,rent),options);
+	}
+	
+	public void showYourFieldMsg(String fieldType)
+	{
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(3), fieldType));
+	}
+	
+	public void showOpponentFieldMsg(String name, int rent)
+	{
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(4), name,rent));
+	}
+	
+	public void showRefugeMsg(int bonus)
+	{
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(5), bonus));
+	}
+	
+	public void showSimpleTax(int taxAmount)
+	{
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(6), taxAmount));
+	}
+	
+	public String showComplexTax(int taxAmount , int percentage)
+	{
+		String[] options = {String.format(Game_Stringbank.getFieldMsg(8), taxAmount),
+							String.format(Game_Stringbank.getFieldMsg(9), percentage)};
+		
+		return GUI.getUserSelection(String.format(Game_Stringbank.getFieldMsg(7), taxAmount), options);
+	}
+	
+	public void showWinnerMsg(String name)
+	{
+		GUI.showMessage(name);
+	}
 }

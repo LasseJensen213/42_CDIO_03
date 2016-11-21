@@ -1,5 +1,6 @@
 package field;
 
+import gui.BoardGameGUI;
 import player.Player;
 
 public class Refuge extends Field {
@@ -24,7 +25,9 @@ public class Refuge extends Field {
 	//Actions happening when landing on field "Refuge"
 	@Override
 	public void landOnField(Player p) {
+		BoardGameGUI gui = new BoardGameGUI();
 		p.getAccount().deposit(receive);
+		gui.showRefugeMsg(receive);
 	}
 
 	@Override

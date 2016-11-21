@@ -9,7 +9,6 @@ public class PlayerManager {
 	private PlayerCreationGUI playerCreateGUI;
 
 	private int nPlayers;
-	private int winningPlayer;
 	
 	public PlayerManager() 
 	{
@@ -47,6 +46,8 @@ public class PlayerManager {
 		return playerList;
 	}
 	
+	
+	
 	public void initPlayers()
 	{
 		//First choose number of players
@@ -65,7 +66,13 @@ public class PlayerManager {
 	}
 	
 	
-	
+	/**
+	 * Checks to see if a name is already taken by  a player in the player list
+	 * @param name
+	 * @return
+	 * true if taken<br>
+	 * false if not<br>
+	 */
 	
 	public boolean nameTaken(String name)
 	{
@@ -101,17 +108,15 @@ public class PlayerManager {
 	 * 
 	 * @return true if there is a winner<br>
 	 * false if there is none<br>
-	 * Updates winningPlayer if a winner is found
+	 *
 	 */
 	public boolean checkForWinner()
 	{
 		int activePlayers = 0;
-		int lastActivePlayer= 0;
 		for(int i = 0; i<nPlayers;i++)
 		{
 			if(!playerList.get(i).isBroke())
 			{
-				lastActivePlayer = i;
 				activePlayers++;
 			}
 			if(activePlayers>1)
@@ -119,7 +124,6 @@ public class PlayerManager {
 				return false;
 			}
 		}
-		winningPlayer = lastActivePlayer;
 		return true;
 	}
 	/**

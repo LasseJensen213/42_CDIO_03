@@ -3,6 +3,7 @@ import board.FieldGenerator;
 import desktop_resources.GUI;
 import gui.BoardGameGUI;
 import player.Player;
+import stringbanks.Game_Stringbank;
 
 
 public class Territory extends Ownable {
@@ -32,20 +33,22 @@ public class Territory extends Ownable {
 	{
 		BoardGameGUI gui = new BoardGameGUI();
 		Player owner = this.getOwner();
-		if(owner==null && player.getAccount().getBalance()>super.getPrice())
+		if(owner==null)
 		{
-			//Hvis feltet ingen ejer har
-			//Skal have mulighed for at købe, hvis han køber bliver 
-			//Hvis feltet ingen ejer har og spilleren har penge nok
-			//Skal have mulighed for at købe
-
-			String options[] = {"Buy","Skip"};
-			String input = GUI.getUserSelection("Message", options);
-			if(input.equals(options[0]))
+			if(player.getAccount().getBalance()>super.getPrice())
 			{
-				this.setOwner(player);
-				gui.setOwner(player.getPlayerPos(), player.getName());
-				player.getAccount().withdraw(this.getPrice());
+				//Hvis feltet ingen ejer har
+				//Skal have mulighed for at købe, hvis han køber bliver 
+				//Hvis feltet ingen ejer har og spilleren har penge nok
+				//Skal have mulighed for at købe
+
+				String input = gui.buyMenu(this.getSubtext(), this.getPrice(), this.getRent());
+				if(input.equals(Game_Stringbank.getFieldMsg(0)))
+				{
+					this.setOwner(player);
+					gui.setOwner(player.getPlayerPos(), player.getName());
+					player.getAccount().withdraw(this.getPrice());
+				}
 			}
 
 		}
@@ -53,7 +56,7 @@ public class Territory extends Ownable {
 		{
 			//Hvis spilleren ejer feltet
 			//Sker der ikke noget
-			//dette skal være tomt
+			gui.showYourFieldMsg(this.getSubtext());
 		}
 		else if(!(owner==null))
 		{
@@ -63,6 +66,7 @@ public class Territory extends Ownable {
 
 			player.getAccount().withdraw(rent);
 			owner.getAccount().deposit(rent);
+			gui.showOpponentFieldMsg(owner.getName(), rent);
 
 		}
 	}
@@ -82,6 +86,7 @@ public class Territory extends Ownable {
 			{
 				gui.removeOwner(pos);
 				this.setOwner(null);
+				this.setDescr(String.format("Price: %d", this.getPrice()));
 			}
 		}
 

@@ -2,6 +2,7 @@ package gui;
 import board.Board;
 import desktop_resources.GUI;
 import game.GameController;
+import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
 	private boolean testmode = true;
@@ -23,7 +24,7 @@ public class GUI_Controller {
 		{
 			gameGUI = new BoardGameGUI();
 			String input = gameGUI.menu();
-			if(input.equals("New game"))
+			if(input.equals(Game_Stringbank.getMainMenuMsg(1)))
 			{
 				GameController game = new GameController();
 				game.testmode(testmode);
@@ -36,7 +37,7 @@ public class GUI_Controller {
 				gameBoard.generateBoard();
 
 			}
-			else if(input.equals("Rules of the game"))
+			else if(input.equals(Game_Stringbank.getMainMenuMsg(3)))
 			{
 				gameGUI.showRules();
 			}
@@ -48,7 +49,7 @@ public class GUI_Controller {
 		}
 	}
 
-	public boolean preRollMenuController()
+	public boolean preRollMenuController(String name)
 	{
 		while(true)
 		{
@@ -58,9 +59,9 @@ public class GUI_Controller {
 			}
 			else if(testmode ==false)
 			{	
-			String input = gameGUI.preRollMenu();
+			String input = gameGUI.preRollMenu(name);
 
-				if(input.equals("Roll dice"))
+				if(input.equals(Game_Stringbank.getPreRollMsg(1)))
 					return true;
 				else if(gameGUI.confirmInput())
 					return false;
