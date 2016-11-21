@@ -12,7 +12,9 @@ import stringbanks.Field_Stringbank;
 
 public class Board {
 
-	
+	/**
+	 * 
+	 */
 	public static void generateBoard()
 	{
 		//Intialize the fields
