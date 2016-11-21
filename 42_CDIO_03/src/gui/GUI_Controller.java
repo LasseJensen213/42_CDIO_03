@@ -15,7 +15,7 @@ public class GUI_Controller {
 		gameGUI = new BoardGameGUI();
 	}
 
-	public void mainMenuController(boolean state)
+	public void mainMenuController()
 	{
 		
 		gameBoard.generateBoard();
@@ -26,7 +26,7 @@ public class GUI_Controller {
 			if(input.equals("New game"))
 			{
 				GameController game = new GameController();
-				game.testmode(state);
+				game.testmode(testmode);
 				game.gameControl(); 
 				
 				// når man hopper ud af denne metode er GUI'en 

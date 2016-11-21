@@ -105,14 +105,12 @@ public class GameController {
 			GUI.showMessage("TESTMODE ON");
 			gameGUI.setRotateNr(1);
 			gameGUI.setSleep(0);
-			gCtrl.setTestmode(true);
 		}
 		else if (statement==false)
 		{
 			System.out.println("TESTMODE OFF");
 			gameGUI.setRotateNr(30);
 			gameGUI.setSleep(400);
-			gCtrl.setTestmode(false);
 		}
 		
 	}

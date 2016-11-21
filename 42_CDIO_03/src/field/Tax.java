@@ -20,10 +20,8 @@ public class Tax extends Field{
 	{
 		if (taxRate == 0)
 		{
-			System.out.println(player.getAccount().getBalance());
 			GUI.showMessage("Tax message 2000 coins");
 			player.getAccount().withdraw(taxAmount);
-			System.out.println(player.getAccount().getBalance());
 			
 		}
 		else
@@ -32,16 +30,13 @@ public class Tax extends Field{
 			String procent = "10%: " + percentage;
 			String options[] = {"4000","10 procent, svarende til:" + procent};
 			String input = GUI.getUserSelection("Valg: 4000 eller 10% af balance", options);
-			System.out.println(player.getAccount().getBalance());
 			if(input.equals(options[0]))
 				{
 					player.getAccount().withdraw(taxAmount);
-					System.out.println(player.getAccount().getBalance());
 				}
 			else if(input.equals(options[1]))
 			{
 				player.getAccount().withdraw(percentage);
-				System.out.println(player.getAccount().getBalance());
 			}
 		}
 		}
