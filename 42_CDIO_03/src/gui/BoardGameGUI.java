@@ -1,5 +1,6 @@
 package gui;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -60,7 +61,7 @@ public class BoardGameGUI {
 				rotation1 = (rotation1+10)%360;
 				rotation2 = (rotation2+10)%360;
 				try {
-					TimeUnit.MILLISECONDS.sleep(17);
+					TimeUnit.MILLISECONDS.sleep(0);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -81,6 +82,7 @@ public class BoardGameGUI {
 			GUI.setCar(FieldGenerator.getFieldsInUse(playerPos)+1, name);
 			try {
 				TimeUnit.MILLISECONDS.sleep(sleep);
+
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -101,9 +103,13 @@ public class BoardGameGUI {
 	
 	
 	
-	public void updatePlayerBalance(String name, int newBalance)
+	public void updatePlayerBalance(ArrayList<Player> playerList)
 	{
-		GUI.setBalance(name, newBalance);
+		for(int i = 0; i<playerList.size();i++)
+		{
+			GUI.setBalance(playerList.get(i).getName(), playerList.get(i).getAccount().getBalance());
+		}
+		
 	}
 
 	public void setSleep(int sleep) {
@@ -115,6 +121,11 @@ public class BoardGameGUI {
 	}
 	
 	
+	
+	public void setOwner(int fieldNumber, String name)
+	{
+		GUI.setOwner(fieldNumber, name);
+	}
 	
 	
 
