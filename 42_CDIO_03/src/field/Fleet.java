@@ -1,6 +1,7 @@
 package field;
 
 import desktop_resources.GUI;
+import gui.BoardGameGUI;
 import player.Player;
 
 public class Fleet extends Ownable{
@@ -8,20 +9,22 @@ public class Fleet extends Ownable{
 	public Fleet(String title,String descr, String subtext,int price)
 	{
 		super(title,descr,subtext,price);
+		descr = String.format("Price: %d", price);
+		this.setDescr(descr);
 
 	}
 
 	@Override
 	public int getRent() {
 		// TODO Auto-generated method stub
-		return 0;
+		return (int)(500*Math.pow(2,this.getOwner().getFleetsOwned()-1));
 	}
 
 	@Override
 	public void landOnField (Player p) 
 	{
 		GUI.showMessage("You landed on fleet");
-	
+		BoardGameGUI gui = new BoardGameGUI();
 		Player owner = this.getOwner();
 		if(owner==null && p.getAccount().getBalance()>super.getPrice())
 		{
@@ -37,9 +40,14 @@ public class Fleet extends Ownable{
 					this.setOwner(p);
 					int alreadyOwned = p.getFleetsOwned();
 					p.setFleetsOwned(alreadyOwned+1);
+					gui.setOwner(p.getPlayerPos(), p.getName());
 					p.getAccount().withdraw(this.getPrice());
 				}
 
+		}
+		else if(this.getOwner()==null)
+		{
+			
 		}
 		else if(this.getOwner()!=p){
 			int FleetsOwned = this.getOwner().getFleetsOwned();

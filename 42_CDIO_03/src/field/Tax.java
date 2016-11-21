@@ -10,6 +10,15 @@ public class Tax extends Field{
 		super(title, descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
+		if(taxRate==10)
+		{
+			descr = String.format("Lose: %d or 10%% of balance", taxAmount);
+		}
+		else
+		{
+			descr = String.format("Lose: %d", taxAmount);
+		}
+		this.setDescr(descr);
 	}
 
 	/**
@@ -77,5 +86,10 @@ public class Tax extends Field{
 		
 	}
 	
+	@Override
+	public int getRent()
+	{
+		return 0;
+	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import board.FieldGenerator;
 import desktop_resources.GUI;
+import field.Ownable;
 import player.Player;
 
 public class BoardGameGUI {
@@ -21,7 +22,7 @@ public class BoardGameGUI {
 		String[] options = {"New game","Rules of the game","Close"};
 		return GUI.getUserSelection("MENU MSG", options);
 	}
-	
+
 	/**
 	 * The menu that shows at the start of a players turn
 	 * @return
@@ -31,23 +32,23 @@ public class BoardGameGUI {
 		String[] options = {"Roll dice","Back to menu"};
 		return GUI.getUserSelection("MENU MSG", options);
 	}
-	
+
 	public void showDiceRolling(int diceResult1, int diceResult2)
 	{
 		Random rand = new Random();
 		int faceValue1, faceValue2;
-		
+
 		int x1 = rand.nextInt(4)+4;
 		int y1 = rand.nextInt(4)+4;
 		//Second dice's position is relative to the first
 		int x2 = x1+rand.nextInt(5)-2;
 		int y2 = y1+rand.nextInt(5)-2;
-		
+
 		if(x1==x2 && y1 == y2)
 		{
 			x1++;
 		}
-		
+
 		int rotation1 =rand.nextInt(360);
 		int rotation2 =rand.nextInt(360);
 		//Simulates The dice rolling
@@ -69,9 +70,9 @@ public class BoardGameGUI {
 		}
 		//Shows the real result
 		GUI.setDice(diceResult1, rotation1, x1, y1, diceResult2, rotation2, x2, y2);
-		
+
 	}
-	
+
 	public void movePlayerModel(String name, int playerPos, int diceResult)
 	{
 		//only moves the player on the board. Doesn't actually update their position
@@ -87,29 +88,29 @@ public class BoardGameGUI {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
-	
+
 	public boolean confirmInput()
 	{
 		return GUI.getUserLeftButtonPressed("CONFIRM INPUT MSG", "Yes", "No");
 	}
-	
+
 	public void showRules()
 	{
 		GUI.showMessage("GAME RULES");
 	}
-	
-	
-	
+
+
+
 	public void updatePlayerBalance(ArrayList<Player> playerList)
 	{
 		for(int i = 0; i<playerList.size();i++)
 		{
 			GUI.setBalance(playerList.get(i).getName(), playerList.get(i).getAccount().getBalance());
 		}
-		
+
 	}
 
 	public void setSleep(int sleep) {
@@ -119,20 +120,23 @@ public class BoardGameGUI {
 	public void setRotateNr(int rotateNr) {
 		this.rotateNr = rotateNr;
 	}
-	
-	
-	
+
+
+
 	public void setOwner(int fieldNumber, String name)
 	{
-		GUI.setOwner(FieldGenerator.getFieldsInUse(fieldNumber)+1, name);
-//		GUI.setDescriptionText(FieldGenerator.getFieldsInUse(fieldNumber)+1, Field_Stringbank.);
+		int translate = FieldGenerator.getFieldsInUse(fieldNumber)+1;
+		String newDescr = "Rent: "+FieldGenerator.getFields(translate-1).getRent();
+		
+		GUI.setOwner(translate, name);
+		GUI.setSubText(translate, newDescr);
 	}
-	
+
 	public void removeOwner(int fieldNumber)
 	{
 		GUI.removeOwner(fieldNumber+1);
 	}
-	
-	
+
+
 
 }

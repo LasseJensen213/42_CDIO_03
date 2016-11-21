@@ -15,6 +15,8 @@ public class Territory extends Ownable {
 	{
 		super(title, descr, subtext, price);
 		this.rent = rent;
+		descr = String.format("Price: %d", price);
+		this.setDescr(descr);
 	}
 
 	@Override

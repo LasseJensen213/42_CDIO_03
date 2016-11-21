@@ -1,6 +1,7 @@
 package field;
 
 import desktop_resources.GUI;
+import gui.BoardGameGUI;
 import player.Player;
 
 //Her skal man også betale en afgift til ejeren.
@@ -16,11 +17,14 @@ public class LaborCamp extends Ownable {
 	{
 		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
+		descr = String.format("Price: %d", price);
+		this.setDescr(descr);
 
 	}
 
 	@Override
 	public void landOnField(Player player){
+		BoardGameGUI gui = new BoardGameGUI();
 		if(super.getOwner() == null && player.getAccount().getBalance()>this.getPrice()){
 			String input = GUI.getUserSelection("Do You want to buy this LaborCamp? Price is: "+ this.getPrice(), new String[]{"buy", "skip"});
 			if(input.equals("buy"))
@@ -39,6 +43,7 @@ public class LaborCamp extends Ownable {
 		{
 			int diceTotal = player.getDiceResult();
 			int nLaborCampsOwned = this.getOwner().getLaborOwned();
+			gui.setOwner(player.getPlayerPos(), player.getName());
 			player.getAccount().deposit(-(baseRent*diceTotal*nLaborCampsOwned));
 			this.getOwner().getAccount().deposit(baseRent*diceTotal*nLaborCampsOwned);
 		}

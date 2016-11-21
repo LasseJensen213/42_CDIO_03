@@ -14,7 +14,7 @@ public abstract class Field {
 	{
 		this.title = title;
 		this.descr = descr;
-		this.subtext = subtext;
+		this.subtext = this.getClass().getName().replaceAll("field.", "");
 	}
 	
 	public String getTitle() {
@@ -47,6 +47,9 @@ public abstract class Field {
 	 */
 	public abstract void freeOwner(Player player, int pos);
 
+	
+	public abstract int getRent();
+	
 	@Override
 	public String toString() {
 		return "Field: "+descr;
