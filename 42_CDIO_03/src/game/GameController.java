@@ -81,7 +81,7 @@ public class GameController {
 		playerManager.get(pNr).getAccount().setBalance(0);
 		for(int i = 1 ; i<nFieldsInUse; i++)
 		{
-			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(i)).freeOwner(playerManager.get(pNr));
+			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(i)).freeOwner(playerManager.get(pNr),i);
 		}
 
 		GUI.removeCar(FieldGenerator.getFieldsInUse(playerManager.get(pNr).getPlayerPos())+1, playerManager.get(pNr).getName());

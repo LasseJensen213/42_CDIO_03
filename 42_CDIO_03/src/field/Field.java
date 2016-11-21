@@ -12,7 +12,7 @@ public abstract class Field {
 	
 	public Field(String title, String descr,String subtext )
 	{
-		this.title = this.getClass().getName().replaceAll("field.", "");
+		this.title = title;
 		this.descr = descr;
 		this.subtext = subtext;
 	}

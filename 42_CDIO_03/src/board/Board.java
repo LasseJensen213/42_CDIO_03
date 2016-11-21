@@ -47,9 +47,9 @@ public class Board {
 			}
 			else if(i==fieldReached)
 			{
-				title = FieldGenerator.getFields(i).getTitle();
+				title =FieldGenerator.getFields(i).getSubtext();
 				descr = FieldGenerator.getFields(i).getDescr();
-				subtext = FieldGenerator.getFields(i).getSubtext();
+				subtext = FieldGenerator.getFields(i).getTitle();
 				fieldInUseReached++;
 			}
 			else

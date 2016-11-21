@@ -43,17 +43,17 @@ public class Fleet extends Ownable{
 		}
 		else if(this.getOwner()!=p){
 			int FleetsOwned = this.getOwner().getFleetsOwned();
-
-			switch(FleetsOwned) {
-			case 1: FleetsOwned = 500 ;  
-			break;
-			case 3: FleetsOwned = 1000 ;  
-			break;
-			case 2: FleetsOwned = 2000 ;  
-			break;
-			case 4: FleetsOwned = 4000 ;  
-			break;
-			}
+			FleetsOwned = (int)(500*Math.pow(2.0, (double)FleetsOwned-1));
+//			switch(FleetsOwned) {
+//			case 1: FleetsOwned = 500 ;  
+//			break;
+//			case 3: FleetsOwned = 1000 ;  
+//			break;
+//			case 2: FleetsOwned = 2000 ;  
+//			break;
+//			case 4: FleetsOwned = 4000 ;  
+//			break;
+//			}
 			p.getAccount().withdraw(FleetsOwned);
 			this.getOwner().getAccount().deposit(FleetsOwned);
 		}

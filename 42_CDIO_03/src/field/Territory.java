@@ -47,7 +47,7 @@ public class Territory extends Ownable {
 			}
 
 		}
-		else if(this.getOwner().getName().equals(player.getName()))
+		else if(this.getOwner()==player)
 		{
 			//Hvis spilleren ejer feltet
 			//Sker der ikke noget

@@ -42,8 +42,8 @@ public class Field_Stringbank {
 	private static String startDescription = "Starting Field";
 	
 	//Territory descriptions.
-	private static String tribeEncampmentDescription = "Description";
-	private static String craterDescription = "Description";
+	private static String tribeEncampmentDescription = "Price: %d";
+	private static String craterDescription = "Price: %d";
 	private static String mountainDescription = "Description";
 	private static String coldDesertDescription = "Description";
 	private static String blackCaveDescription = "Description";

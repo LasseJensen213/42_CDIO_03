@@ -11,7 +11,6 @@ public class PlayerCreation_Stringbank {
 	private static String chooseColor = "Choose the color for your car";
 
 	
-	private static String colorBlack = "Black";
 	private static String colorBlue = "Blue";
 	private static String colorGreen = "Green";
 	private static String colorRed = "Red";
@@ -23,7 +22,7 @@ public class PlayerCreation_Stringbank {
 													  nameTooLong,nameTaken,
 													  chooseColor};
 	
-	private static String[] colors = {colorBlack , colorBlue , 
+	private static String[] colors = {colorBlue , 
 									  colorGreen , colorRed, 
 									  colorYellow , colorWhite , colorPink};
 
