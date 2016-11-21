@@ -1,31 +1,55 @@
 package field;
+import desktop_resources.GUI;
 import player.Player;
 public class Tax extends Field{
-	private int taxAmount;;
+	private int taxAmount;
 	private int taxRate;
 	
-	protected Tax(int taxAmount, int taxRate)
+	public Tax(String title, String descr, String subtext, int taxAmount, int taxRate)
 	{
+		super(title, descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
 	}
 
-	
-	
-	private void landOnField(Player player)
+	/**
+	 * 	
+	 */
+	@Override
+	public void landOnField(Player player)
 	{
-		int pos = player.getPlayerPos();
-		if (pos == 3)
+		if (taxRate == 0)
 		{
-			//Message
-			//Hæv
+			System.out.println(player.getAccount().getBalance());
+			GUI.showMessage("Tax message 2000 coins");
+			player.getAccount().withdraw(taxAmount);
+			System.out.println(player.getAccount().getBalance());
+			
 		}
-		else if (pos == 21) 
+		else
 		{
-			//Choice function
+			int percentage = player.getAccount().getBalance()*taxRate/100;
+			String procent = "10%: " + percentage;
+			String options[] = {"4000","10 procent, svarende til:" + procent};
+			String input = GUI.getUserSelection("Valg: 4000 eller 10% af balance", options);
+			System.out.println(player.getAccount().getBalance());
+			if(input.equals(options[0]))
+				{
+					player.getAccount().withdraw(taxAmount);
+					System.out.println(player.getAccount().getBalance());
+				}
+			else if(input.equals(options[1]))
+			{
+				player.getAccount().withdraw(percentage);
+				System.out.println(player.getAccount().getBalance());
+			}
+		}
 		}
 		
-	}
+		
+			
+		
+	
 	
 	
 	
@@ -47,6 +71,16 @@ public class Tax extends Field{
 		this.taxRate = taxRate;
 	}
 	
+	@Override
+	public String toString()
+	{
+		return super.toString()+" Type: "+this.getClass().getName()+" Tax: "+taxAmount;
+	}
+
+	@Override
+	public void freeOwner(Player player) {
+		
+	}
 	
 	
 }
