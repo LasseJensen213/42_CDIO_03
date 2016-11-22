@@ -37,7 +37,7 @@ public class GameController {
 		pNr = 0;
 
 		//tjekker om spilleren vil fortsætte spillet eller gå tilbage til menuen
-		while(gCtrl.preRollMenuController())
+		while(gCtrl.preRollMenuController(playerManager.get(pNr).getName()))
 		{
 
 			diceCup.rollDice();
@@ -49,17 +49,16 @@ public class GameController {
 			updatePlayerPos(pNr,diceResult);
 			playerManager.get(pNr).setDiceResult(diceResult);
 			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(
-					playerManager.get(0).getPlayerPos())).landOnField(playerManager.get(pNr));
-
+					playerManager.get(pNr).getPlayerPos())).landOnField(playerManager.get(pNr));
 			if(playerManager.checkIfBroke(pNr))
 			{
 				playerIsBroke(pNr);
 			}
-			gameGUI.updatePlayerBalance(playerManager.get(pNr).getName(), playerManager.get(pNr).getAccount().getBalance());
+			gameGUI.updatePlayerBalance(playerManager.getPlayerList());
 			pNr = playerManager.nextPlayer(pNr);
 			if(playerManager.checkForWinner())
 			{
-				//TODO: Vinder besked?
+				gameGUI.showWinnerMsg(playerManager.get(pNr).getName());
 				break;
 			}
 
@@ -79,9 +78,10 @@ public class GameController {
 		playerManager.get(pNr).getAccount().setBalance(0);
 		for(int i = 1 ; i<nFieldsInUse; i++)
 		{
-			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(i)).freeOwner(playerManager.get(pNr));
+			FieldGenerator.getFields(FieldGenerator.getFieldsInUse(i)).freeOwner(playerManager.get(pNr),i);
 		}
 
+		GUI.removeCar(FieldGenerator.getFieldsInUse(playerManager.get(pNr).getPlayerPos())+1, playerManager.get(pNr).getName());
 	}
 
 	public void updatePlayerPos(int pNr, int diceResult)
@@ -93,6 +93,23 @@ public class GameController {
 			if(playerManager.get(pNr).getPlayerPos()==0)
 				i--;
 		}
+	}
+	
+	public void testmode(boolean statement)
+	{
+		if(statement==true)
+		{
+			GUI.showMessage("TESTMODE ON");
+			gameGUI.setRotateNr(1);
+			gameGUI.setSleep(0);
+		}
+		else if (statement==false)
+		{
+			System.out.println("TESTMODE OFF");
+			gameGUI.setRotateNr(30);
+			gameGUI.setSleep(400);
+		}
+		
 	}
 
 

@@ -1,6 +1,8 @@
 package field;
 import desktop_resources.GUI;
+import gui.BoardGameGUI;
 import player.Player;
+import stringbanks.Game_Stringbank;
 public class Tax extends Field{
 	private int taxAmount;
 	private int taxRate;
@@ -10,6 +12,15 @@ public class Tax extends Field{
 		super(title, descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
+		if(taxRate==10)
+		{
+			descr = String.format("Lose: %d or 10%% of balance", taxAmount);
+		}
+		else
+		{
+			descr = String.format("Lose: %d", taxAmount);
+		}
+		this.setDescr(descr);
 	}
 
 	/**
@@ -18,19 +29,20 @@ public class Tax extends Field{
 	@Override
 	public void landOnField(Player player)
 	{
+		BoardGameGUI gui = new BoardGameGUI();
 		if (taxRate == 0)
 		{
-			GUI.showMessage("Tax message 2000 coins");
+			gui.showSimpleTax(this.taxAmount);
 			player.getAccount().withdraw(taxAmount);
 			
 		}
 		else
 		{
 			int percentage = player.getAccount().getBalance()*taxRate/100;
-			String procent = "10%: " + percentage;
-			String options[] = {"4000","10 procent, svarende til:" + procent};
-			String input = GUI.getUserSelection("Valg: 4000 eller 10% af balance", options);
-			
+			String procent = String.format(Game_Stringbank.getFieldMsg(9), percentage);
+			String normal = String.format(Game_Stringbank.getFieldMsg(8), this.taxAmount);
+			String options[] = {normal,procent};
+			String input = gui.showComplexTax(this.taxAmount, percentage);
 			if(input.equals(options[0]))
 				{
 					player.getAccount().withdraw(taxAmount);
@@ -74,9 +86,14 @@ public class Tax extends Field{
 	}
 
 	@Override
-	public void freeOwner(Player player) {
+	public void freeOwner(Player player, int pos) {
 		
 	}
 	
+	@Override
+	public int getRent()
+	{
+		return 0;
+	}
 	
 }

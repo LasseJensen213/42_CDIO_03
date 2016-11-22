@@ -42,76 +42,76 @@ public class Field_Stringbank {
 	private static String startDescription = "Starting Field";
 	
 	//Territory descriptions.
-	private static String tribeEncampmentDescription = "Description";
-	private static String craterDescription = "Description";
-	private static String mountainDescription = "Description";
-	private static String coldDesertDescription = "Description";
-	private static String blackCaveDescription = "Description";
-	private static String wereWallDescription = "Description";
-	private static String mountainVillageDescription = "Description";
-	private static String southCitadelDescription = "Description";
-	private static String palaceGatesDescription = "Description";
-	private static String towerDescription = "Description";
-	private static String castleDescription = "Description";
+	private static String tribeEncampmentDescription = "Price %d";
+	private static String craterDescription = "Price %d";
+	private static String mountainDescription = "Price %d";
+	private static String coldDesertDescription = "Price %d";
+	private static String blackCaveDescription = "Price %d";
+	private static String wereWallDescription = "Price %d";
+	private static String mountainVillageDescription = "Price %d";
+	private static String southCitadelDescription = "Price %d";
+	private static String palaceGatesDescription = "Price %d";
+	private static String towerDescription = "Price %d";
+	private static String castleDescription = "Price %d";
 
 
 	//Fleet descriptions:
-	private static String secondSailDescription = "description";
-	private static String seaGroverDescription = "description";
-	private static String theBuccaneersDescription = "description";
-	private static String privateerArmadeDescription = "description";
+	private static String secondSailDescription = "Price %d";
+	private static String seaGroverDescription = "Price %d";
+	private static String theBuccaneersDescription = "Price %d";
+	private static String privateerArmadeDescription = "Price %d";
 
 
 	//Labor Camp descriptions
-	private static String mountainHutsDescription = "description";
-	private static String thePitDescription = "description";
+	private static String mountainHutsDescription = "Price %d";
+	private static String thePitDescription = "Price %d";
 
 	//Tax fields description
-	private static String goldmineDescription = "description";
-	private static String caravanDescription = "description";
+	private static String goldmineDescription = "Price %d";
+	private static String caravanDescription = "Price %d";
 
 	//Refuge descriptions:
-	private static String walledCityDescription = "Description";
-	private static String monasteryDescription = "Description";
+	private static String walledCityDescription = "Price %d";
+	private static String monasteryDescription = "Price %d";
 
 
 	//Subtext:
-	private static String startSubtext = "Subtext";
+	private static String startSubtext = "";
 	
 	//Territory subtext.
-	private static String tribeEncampmentSubtext = "Subtext";
-	private static String craterSubtext = "Subtext";
-	private static String mountainSubtext = "Subtext";
-	private static String coldDesertSubtext = "Subtext";
-	private static String blackCaveSubtext = "Subtext";
-	private static String wereWallSubtext = "Subtext";
-	private static String mountainVillageSubtext = "Subtext";
-	private static String southCitadelSubtext = "Subtext";
-	private static String palaceGatesSubtext = "Subtext";
-	private static String towerSubtext = "Subtext";
-	private static String castleSubtext = "Subtext";
+	private static String tribeEncampmentSubtext = "Tribe Encampment";
+	private static String craterSubtext = "Crater";
+	private static String mountainSubtext = "Mountain";
+	private static String coldDesertSubtext = "Cold Desert";
+	private static String blackCaveSubtext = "Black Cave";
+	private static String wereWallSubtext = "Werewall";
+	private static String mountainVillageSubtext = "Mountain Village";
+	private static String southCitadelSubtext = "South Citadel";
+	private static String palaceGatesSubtext = "Palace Gates";
+	private static String towerSubtext = "Tower";
+	private static String castleSubtext = "Castle";
 
 
 	//Fleet subtext:
-	private static String secondSailSubtext = "Subtext";
-	private static String seaGroverSubtext = "Subtext";
-	private static String theBuccaneersSubtext = "Subtext";
-	private static String privateerArmadeSubtext = "Subtext";
+	private static String secondSailSubtext = "Second Sail";
+	private static String seaGroverSubtext = "Sea Grover";
+	private static String theBuccaneersSubtext = "The Buccaneers";
+	private static String privateerArmadeSubtext = "Privateer Armada";
 
 
 	//Labor Camp subtext
-	private static String mountainHutsSubtext = "subtext";
-	private static String thePitSubtext = "subtext";
+	private static String mountainHutsSubtext = "Mountain Hut";
+	private static String thePitSubtext = "The Pit";
 
 
 	//Tax fields subtext
-	private static String goldmineSubtext = "subtext";
-	private static String caravanSubtext = "subtext";
+	private static String goldmineSubtext = "Goldmine";
+	private static String caravanSubtext = "Caravan";
 
 
 	//Refuge subtexts.
-	private static String walledCitySubtext = "subtext";
-	private static String monasterySubtext = "subtext";
+	private static String walledCitySubtext = "Walled City";
+	private static String monasterySubtext = "Monastery";
 
 
 	//Title arrays:

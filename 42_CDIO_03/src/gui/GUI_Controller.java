@@ -2,9 +2,11 @@ package gui;
 import board.Board;
 import desktop_resources.GUI;
 import game.GameController;
+import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
-
+	private boolean testmode = true;
+	
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
@@ -13,18 +15,21 @@ public class GUI_Controller {
 		gameBoard = new Board();
 		gameGUI = new BoardGameGUI();
 	}
-	
+
 	public void mainMenuController()
 	{
+		
 		gameBoard.generateBoard();
 		while(true)
 		{
 			gameGUI = new BoardGameGUI();
 			String input = gameGUI.menu();
-			if(input.equals("New game"))
+			if(input.equals(Game_Stringbank.getMainMenuMsg(1)))
 			{
 				GameController game = new GameController();
+				game.testmode(testmode);
 				game.gameControl(); 
+				
 				// når man hopper ud af denne metode er GUI'en 
 				//lukket ned så man skal starte den op igen
 				GUI.close();
@@ -32,7 +37,7 @@ public class GUI_Controller {
 				gameBoard.generateBoard();
 
 			}
-			else if(input.equals("Rules of the game"))
+			else if(input.equals(Game_Stringbank.getMainMenuMsg(3)))
 			{
 				gameGUI.showRules();
 			}
@@ -44,18 +49,28 @@ public class GUI_Controller {
 		}
 	}
 
-	public boolean preRollMenuController()
+	public boolean preRollMenuController(String name)
 	{
 		while(true)
 		{
-			String input = gameGUI.preRollMenu();
-			
-			if(input.equals("Roll dice"))
+			if(testmode == true)
+			{
 				return true;
-			else if(gameGUI.confirmInput())
-				return false;
-		}				
+			}
+			else if(testmode ==false)
+			{	
+			String input = gameGUI.preRollMenu(name);
 
+				if(input.equals(Game_Stringbank.getPreRollMsg(1)))
+					return true;
+				else if(gameGUI.confirmInput())
+					return false;
+			}				
+		}
+	}
+
+	public void setTestmode(boolean testmode) {
+		this.testmode = testmode;
 	}
 
 
