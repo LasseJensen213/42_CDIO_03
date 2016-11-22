@@ -178,7 +178,12 @@ public class BoardGameGUI {
 	{
 		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(6), taxAmount));
 	}
-	
+	/**
+	 * Gives
+	 * @param taxAmount
+	 * @param percentage
+	 * @return
+	 */
 	public String showComplexTax(int taxAmount , int percentage)
 	{
 		String[] options = {String.format(Game_Stringbank.getFieldMsg(8), taxAmount),
@@ -186,9 +191,17 @@ public class BoardGameGUI {
 		
 		return GUI.getUserSelection(String.format(Game_Stringbank.getFieldMsg(7), taxAmount), options);
 	}
-	
+	/**
+	 * Shows this message when someone has won
+	 * @param name
+	 */
 	public void showWinnerMsg(String name)
 	{
-		GUI.showMessage(name);
+		GUI.showMessage(String.format(Game_Stringbank.getWinnerMsg(), name));
+	}
+	
+	public void showBrokeMsg(String name)
+	{
+		GUI.showMessage(String.format(Game_Stringbank.getBrokeMsg(), name));
 	}
 }

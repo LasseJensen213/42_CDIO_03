@@ -13,6 +13,7 @@ public class PlayerManager {
 	public PlayerManager() 
 	{
 		this.playerList = new ArrayList<Player>();
+		this.playerList.clear();
 		this.playerCreateGUI = new PlayerCreationGUI();	
 		
 	
