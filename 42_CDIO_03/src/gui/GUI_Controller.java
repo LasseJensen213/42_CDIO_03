@@ -29,12 +29,7 @@ public class GUI_Controller {
 				GameController game = new GameController();
 				game.testmode(testmode);
 				game.gameControl(); 
-				
-				// når man hopper ud af denne metode er GUI'en 
-				//lukket ned så man skal starte den op igen
-				GUI.close();
-				gameBoard = new Board();
-				gameBoard.generateBoard();
+				break;
 
 			}
 			else if(input.equals(Game_Stringbank.getMainMenuMsg(3)))
