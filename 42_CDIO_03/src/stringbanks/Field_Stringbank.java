@@ -76,42 +76,42 @@ public class Field_Stringbank {
 
 
 	//Subtext:
-	private static String startSubtext = "Subtext";
+	private static String startSubtext = "";
 	
 	//Territory subtext.
-	private static String tribeEncampmentSubtext = "Subtext";
-	private static String craterSubtext = "Subtext";
-	private static String mountainSubtext = "Subtext";
-	private static String coldDesertSubtext = "Subtext";
-	private static String blackCaveSubtext = "Subtext";
-	private static String wereWallSubtext = "Subtext";
-	private static String mountainVillageSubtext = "Subtext";
-	private static String southCitadelSubtext = "Subtext";
-	private static String palaceGatesSubtext = "Subtext";
-	private static String towerSubtext = "Subtext";
-	private static String castleSubtext = "Subtext";
+	private static String tribeEncampmentSubtext = "Tribe Encampment";
+	private static String craterSubtext = "Crater";
+	private static String mountainSubtext = "Mountain";
+	private static String coldDesertSubtext = "Cold Desert";
+	private static String blackCaveSubtext = "Black Cave";
+	private static String wereWallSubtext = "Werewall";
+	private static String mountainVillageSubtext = "Mountain Village";
+	private static String southCitadelSubtext = "South Citadel";
+	private static String palaceGatesSubtext = "Palace Gates";
+	private static String towerSubtext = "Tower";
+	private static String castleSubtext = "Castle";
 
 
 	//Fleet subtext:
-	private static String secondSailSubtext = "Subtext";
-	private static String seaGroverSubtext = "Subtext";
-	private static String theBuccaneersSubtext = "Subtext";
-	private static String privateerArmadeSubtext = "Subtext";
+	private static String secondSailSubtext = "Second Sail";
+	private static String seaGroverSubtext = "Sea Grover";
+	private static String theBuccaneersSubtext = "The Buccaneers";
+	private static String privateerArmadeSubtext = "Privateer Armada";
 
 
 	//Labor Camp subtext
-	private static String mountainHutsSubtext = "subtext";
-	private static String thePitSubtext = "subtext";
+	private static String mountainHutsSubtext = "Mountain Hut";
+	private static String thePitSubtext = "The Pit";
 
 
 	//Tax fields subtext
-	private static String goldmineSubtext = "subtext";
-	private static String caravanSubtext = "subtext";
+	private static String goldmineSubtext = "Goldmine";
+	private static String caravanSubtext = "Caravan";
 
 
 	//Refuge subtexts.
-	private static String walledCitySubtext = "subtext";
-	private static String monasterySubtext = "subtext";
+	private static String walledCitySubtext = "Walled City";
+	private static String monasterySubtext = "Monastery";
 
 
 	//Title arrays:
