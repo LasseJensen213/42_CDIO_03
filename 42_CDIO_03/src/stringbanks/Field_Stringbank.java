@@ -74,7 +74,7 @@ public class Field_Stringbank {
 
 	//Tax fields description
 	private static String goldmineDescription = "Lose: %d";
-	private static String caravanDescription = "Lose: %d or 10%% of total assets.";
+	private static String caravanDescription = "Lose: %d or 10%%";
 
 	//Refuge descriptions:
 	private static String walledCityDescription = "Price %d.";

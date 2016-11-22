@@ -15,7 +15,7 @@ public class Tax extends Field{
 		
 		if(taxRate==10)
 		{
-			descr = String.format("", taxAmount);
+			descr = String.format(descr, taxAmount);
 			subtext = String.format(subtext, taxAmount,taxRate);
 
 		}
