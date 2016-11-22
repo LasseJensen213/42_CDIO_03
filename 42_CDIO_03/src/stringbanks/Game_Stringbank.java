@@ -46,6 +46,8 @@ public class Game_Stringbank {
 	
 	private static String winnerMsg = "Congratulations! %s you have beaten all the other players. "
 									+ "you will now return to the main menu";
+	
+	private static String brokeMsg = "%s is broke and has been removed from the game";
 	/**
 	 * 
 	 *
@@ -114,5 +116,10 @@ public class Game_Stringbank {
 	public static String getWinnerMsg()
 	{
 		return winnerMsg;
+	}
+	
+	public static String getBrokeMsg()
+	{
+		return brokeMsg;
 	}
 }
