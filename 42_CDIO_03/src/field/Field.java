@@ -12,7 +12,7 @@ public abstract class Field {
 	
 	public Field(String title, String descr,String subtext )
 	{
-		this.title = this.getClass().getName().replaceAll("field.", "");
+		this.title = title;
 		this.descr = descr;
 		this.subtext = subtext;
 	}
@@ -45,8 +45,11 @@ public abstract class Field {
 	 * If the player corresponds to the owner, then the owner is set to null.
 	 * @param player
 	 */
-	public abstract void freeOwner(Player player);
+	public abstract void freeOwner(Player player, int pos);
 
+	
+	public abstract int getRent();
+	
 	@Override
 	public String toString() {
 		return "Field: "+descr;

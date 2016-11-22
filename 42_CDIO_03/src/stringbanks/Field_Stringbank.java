@@ -5,6 +5,12 @@ public class Field_Stringbank {
 	//Field Titles
 	private static String startTitle = "Start";
 
+	//Types of fields:
+	private static String territoryType = "Territory";
+	private static String fleetType = "Fleet";
+	private static String laborCampType = "Labor Camp";
+	private static String taxType = "Tax";
+	private static String refugeType = "Refuge";
 	//Territory Titles
 	private static String tribeEncampmentTitle = "Tribe encampment";
 	private static String craterTitle = "Crater";
@@ -42,76 +48,76 @@ public class Field_Stringbank {
 	private static String startDescription = "Starting Field";
 	
 	//Territory descriptions.
-	private static String tribeEncampmentDescription = "Description";
-	private static String craterDescription = "Description";
-	private static String mountainDescription = "Description";
-	private static String coldDesertDescription = "Description";
-	private static String blackCaveDescription = "Description";
-	private static String wereWallDescription = "Description";
-	private static String mountainVillageDescription = "Description";
-	private static String southCitadelDescription = "Description";
-	private static String palaceGatesDescription = "Description";
-	private static String towerDescription = "Description";
-	private static String castleDescription = "Description";
+	private static String tribeEncampmentDescription = "Price %d.";
+	private static String craterDescription = "Price %d.";
+	private static String mountainDescription = "Price %d.";
+	private static String coldDesertDescription = "Price %d.";
+	private static String blackCaveDescription = "Price %d.";
+	private static String wereWallDescription = "Price %d.";
+	private static String mountainVillageDescription = "Price %d.";
+	private static String southCitadelDescription = "Price %d.";
+	private static String palaceGatesDescription = "Price %d.";
+	private static String towerDescription = "Price %d.";
+	private static String castleDescription = "Price %d.";
 
 
 	//Fleet descriptions:
-	private static String secondSailDescription = "description";
-	private static String seaGroverDescription = "description";
-	private static String theBuccaneersDescription = "description";
-	private static String privateerArmadeDescription = "description";
+	private static String secondSailDescription = "Price %d.";
+	private static String seaGroverDescription = "Price %d.";
+	private static String theBuccaneersDescription = "Price %d.";
+	private static String privateerArmadeDescription = "Price %d.";
 
 
 	//Labor Camp descriptions
-	private static String mountainHutsDescription = "description";
-	private static String thePitDescription = "description";
+	private static String mountainHutsDescription = "Price %d.";
+	private static String thePitDescription = "Price %d.";
 
 	//Tax fields description
-	private static String goldmineDescription = "description";
-	private static String caravanDescription = "description";
+	private static String goldmineDescription = "Lose: %d";
+	private static String caravanDescription = "Lose: %d or 10%% of total assets.";
 
 	//Refuge descriptions:
-	private static String walledCityDescription = "Description";
-	private static String monasteryDescription = "Description";
+	private static String walledCityDescription = "Price %d.";
+	private static String monasteryDescription = "Price %d.";
 
 
 	//Subtext:
-	private static String startSubtext = "Subtext";
+	private static String startSubtext = "";
 	
 	//Territory subtext.
-	private static String tribeEncampmentSubtext = "Subtext";
-	private static String craterSubtext = "Subtext";
-	private static String mountainSubtext = "Subtext";
-	private static String coldDesertSubtext = "Subtext";
-	private static String blackCaveSubtext = "Subtext";
-	private static String wereWallSubtext = "Subtext";
-	private static String mountainVillageSubtext = "Subtext";
-	private static String southCitadelSubtext = "Subtext";
-	private static String palaceGatesSubtext = "Subtext";
-	private static String towerSubtext = "Subtext";
-	private static String castleSubtext = "Subtext";
+	private static String tribeEncampmentSubtext = territoryType + "<br>The Field \""  + tribeEncampmentTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String craterSubtext = territoryType + "<br>The Field \""  + craterTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String mountainSubtext = territoryType + "<br>The Field \""  + mountainTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String coldDesertSubtext = territoryType + "<br>The Field \""  + coldDesertTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String blackCaveSubtext = territoryType + "<br>The Field \""  + blackCaveTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String wereWallSubtext = territoryType + "<br>The Field \"" + wereWallTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String mountainVillageSubtext = territoryType + "<br>The Field \"" + mountainVillageTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String southCitadelSubtext = territoryType + "<br>The Field \"" + southCitadelTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String palaceGatesSubtext = territoryType + "<br>The Field \"" + palaceGatesTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String towerSubtext = territoryType + "<br>The Field \"" + towerTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
+	private static String castleSubtext = territoryType + "<br>The Field \"" + castleTitle + "\" can be bought for %d." + "<br> The rent on this field is %d.";
 
 
 	//Fleet subtext:
-	private static String secondSailSubtext = "Subtext";
-	private static String seaGroverSubtext = "Subtext";
-	private static String theBuccaneersSubtext = "Subtext";
-	private static String privateerArmadeSubtext = "Subtext";
+	private static String secondSailSubtext = fleetType + "<br>Rent: With 1 owned 500<br>" + "Rent: With 2 owned 1000<br>" + "Rent: With 3 owned 2000<br>" + "Rent: With 4 owned 4000";
+	private static String seaGroverSubtext = fleetType + "<br>Rent: With 1 owned 500<br>" + "Rent: With 2 owned 1000<br>" + "Rent: With 3 owned 2000<br>" + "Rent: With 4 owned 4000";
+	private static String theBuccaneersSubtext = fleetType + "<br>Rent: With 1 owned 500<br>" + "Rent: With 2 owned 1000<br>" + "Rent: With 3 owned 2000<br>" + "Rent: With 4 owned 4000";
+	private static String privateerArmadeSubtext = fleetType + "<br>Rent: With 1 owned 500<br>" + "Rent: With 2 owned 1000<br>" + "Rent: With 3 owned 2000<br>" + "Rent: With 4 owned 4000";
 
 
 	//Labor Camp subtext
-	private static String mountainHutsSubtext = "subtext";
-	private static String thePitSubtext = "subtext";
+	private static String mountainHutsSubtext = laborCampType + " <br> The Field \"" + mountainHutsTitle + "\" can be bought for %d <br>" + "Rent is calculated by diceresult times 100 times number of labor camps owned";
+	private static String thePitSubtext = laborCampType + " <br> The Field \"" + thePitTitle + "\" can be bought for %d <br>" + "Rent is calculated by diceresult times 100 times number of labor camps owned";
 
 
 	//Tax fields subtext
-	private static String goldmineSubtext = "subtext";
-	private static String caravanSubtext = "subtext";
+	private static String goldmineSubtext =  taxType + "<br> You have to pay %d on this field.";;
+	private static String caravanSubtext = taxType + "<br> You have to pay %d or %d%% of your total assets on this field.";
 
 
 	//Refuge subtexts.
-	private static String walledCitySubtext = "subtext";
-	private static String monasterySubtext = "subtext";
+	private static String walledCitySubtext = refugeType + "<br> You recieve %d on this field.";
+	private static String monasterySubtext = refugeType + "<br> You recieve %d on this field.";
 
 
 	//Title arrays:

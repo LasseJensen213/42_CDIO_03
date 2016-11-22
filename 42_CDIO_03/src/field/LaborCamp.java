@@ -1,7 +1,9 @@
 package field;
 
 import desktop_resources.GUI;
+import gui.BoardGameGUI;
 import player.Player;
+import stringbanks.Game_Stringbank;
 
 //Her skal man også betale en afgift til ejeren.
 //Beløbet bestemmes ved at slå med terningerne og gange resultatet med 100. 
@@ -16,31 +18,41 @@ public class LaborCamp extends Ownable {
 	{
 		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
+		subtext = String.format(subtext, price);
+		this.setSubtext(subtext);
+		descr = String.format("Price: %d", price);
+		this.setDescr(descr);
 
 	}
 
 	@Override
 	public void landOnField(Player player){
-		if(super.getOwner() == null && player.getAccount().getBalance()>this.getPrice()){
-			String input = GUI.getUserSelection("Do You want to buy this LaborCamp? Price is: "+ this.getPrice(), new String[]{"buy", "skip"});
-			if(input.equals("buy"))
-			{
-				this.setOwner(player);
-				player.getAccount().deposit(-this.getPrice());
+		BoardGameGUI gui = new BoardGameGUI();
+		if(super.getOwner() == null){
+			if(player.getAccount().getBalance()>this.getPrice()){
+				String input = gui.buyMenu(this.getTitle(), this.getPrice(), this.getRent());
+				if(input.equals(Game_Stringbank.getFieldMsg(0)))
+				{
+					this.setOwner(player);
+					player.setLaborOwned(player.getLaborOwned()+1);
+					player.getAccount().withdraw(this.getPrice());
+					gui.setOwner(player.getPlayerPos(), player.getName());
+				}
+
+
 			}
-
-
 		}
-		else if(this.getOwner().getName().equals(player.getName()))
+		else if(this.getOwner()==player)
 		{
-
+			gui.showYourFieldMsg(this.getTitle());
 		}
 		else if(!(this.getOwner()==null))
 		{
 			int diceTotal = player.getDiceResult();
 			int nLaborCampsOwned = this.getOwner().getLaborOwned();
-			player.getAccount().deposit(-(baseRent*diceTotal*nLaborCampsOwned));
+			player.getAccount().withdraw(baseRent*diceTotal*nLaborCampsOwned);
 			this.getOwner().getAccount().deposit(baseRent*diceTotal*nLaborCampsOwned);
+			gui.showOpponentFieldMsg(this.getOwner().getName(),player.getName(), baseRent*diceTotal*nLaborCampsOwned);
 		}
 
 	}
@@ -58,10 +70,15 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	public void freeOwner(Player player) {
+	public void freeOwner(Player player, int pos) {
+		BoardGameGUI gui = new BoardGameGUI();
 		if(!(this.getOwner()==null)){
 			if(this.getOwner().getName().equals(player.getName()))
+			{
+				gui.removeOwner(pos);
 				this.setOwner(null);
+				this.setDescr(String.format("Price: %d", this.getPrice()));
+			}
 		}
 	}
 
