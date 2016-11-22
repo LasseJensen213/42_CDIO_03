@@ -63,7 +63,7 @@ public class Board {
 			
 			Color bgColor = FieldGenerator.getBgColors(i);
 			Color fgColor = FieldGenerator.getFgColors(i);
-			fields[i]= new Street.Builder().setTitle(subtext).setDescription(title).setSubText(descr).
+			fields[i]= new Street.Builder().setTitle(title).setDescription(subtext).setSubText(descr).
 					setBgColor(bgColor).setFgColor(fgColor).setRent("").build();
 			System.out.println("Generating " +  title + "..");
 		}

@@ -108,7 +108,7 @@ public class GameController {
 		else if (statement==false)
 		{
 			System.out.println("TESTMODE OFF");
-			gameGUI.setRotateNr(30);
+			gameGUI.setRotateNr(20);
 			gameGUI.setSleep(400);
 		}
 		

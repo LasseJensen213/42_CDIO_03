@@ -53,7 +53,7 @@ public class BoardGameGUI {
 		int rotation1 =rand.nextInt(360);
 		int rotation2 =rand.nextInt(360);
 		//Simulates The dice rolling
-		for(int i = 0; i<5;i++)
+		for(int i = 0; i<4;i++)
 		{
 			faceValue1 = rand.nextInt(6)+1;
 			faceValue2 = rand.nextInt(6)+1;
@@ -63,9 +63,10 @@ public class BoardGameGUI {
 				rotation1 = (rotation1+10)%360;
 				rotation2 = (rotation2+10)%360;
 				try {
-					TimeUnit.MILLISECONDS.sleep(17);
+					TimeUnit.MILLISECONDS.sleep(20);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
+					System.out.println("Roll dice InterruptedException");
 				}
 			}
 		}
@@ -164,9 +165,9 @@ public class BoardGameGUI {
 		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(3), fieldType));
 	}
 	
-	public void showOpponentFieldMsg(String name, int rent)
+	public void showOpponentFieldMsg(String name1,String name2, int rent)
 	{
-		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(4), name,rent));
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(4), name1,name2,rent));
 	}
 	
 	public void showRefugeMsg(int bonus)
