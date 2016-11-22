@@ -1,6 +1,6 @@
-package testDriver;
+package main;
 import gui.GUI_Controller;
-public class testIt {
+public class Main {
 
 
 	public static void main(String[] args) {
