@@ -38,7 +38,7 @@ public class Fleet extends Ownable{
 				//Hvis feltet ingen ejer har og spilleren har penge nok
 				//Skal have mulighed for at købe
 
-				String input = gui.buyMenu(this.getSubtext(), this.getPrice(), this.getRent());
+				String input = gui.buyMenu(this.getTitle(), this.getPrice(), this.getRent());
 				if(input.equals(Game_Stringbank.getFieldMsg(0)))
 				{
 					this.setOwner(p);
@@ -52,7 +52,7 @@ public class Fleet extends Ownable{
 		}
 		else if(this.getOwner()==p)
 		{
-			gui.showYourFieldMsg(this.getSubtext());
+			gui.showYourFieldMsg(this.getTitle());
 		}
 		else if(this.getOwner()!=p){
 			int FleetsOwned = this.getOwner().getFleetsOwned();

@@ -28,7 +28,7 @@ public class LaborCamp extends Ownable {
 		BoardGameGUI gui = new BoardGameGUI();
 		if(super.getOwner() == null){
 			if(player.getAccount().getBalance()>this.getPrice()){
-				String input = gui.buyMenu(this.getSubtext(), this.getPrice(), this.getRent());
+				String input = gui.buyMenu(this.getTitle(), this.getPrice(), this.getRent());
 				if(input.equals(Game_Stringbank.getFieldMsg(0)))
 				{
 					this.setOwner(player);
@@ -42,7 +42,7 @@ public class LaborCamp extends Ownable {
 		}
 		else if(this.getOwner()==player)
 		{
-			gui.showYourFieldMsg(this.getSubtext());
+			gui.showYourFieldMsg(this.getTitle());
 		}
 		else if(!(this.getOwner()==null))
 		{

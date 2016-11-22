@@ -33,7 +33,7 @@ public class Game_Stringbank {
 	
 	private static String ownableFieldMsg_NoOwner = "You've landed on a %s the price is: %d and the rent is: %d";
 	private static String ownableFieldMsg_YouOwn = "You've landed on your %s";
-	private static String ownableFieldMsg_DontOwn = "The evil %s is demanding a rent of: %d";
+	private static String ownableFieldMsg_DontOwn = "%s is demanding a rent of: %d";
 	private static String refugeMsg = "You've recieved a bonus of: %d";
 	private static String tax_NoOption ="You had to pay: %d";
 	private static String tax_TwoOptions = "You have to pay %d or 10%% of you balance";
