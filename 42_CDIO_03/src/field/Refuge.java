@@ -12,8 +12,10 @@ public class Refuge extends Field {
 	{
 		super(title, descr, subtext);
 		this.receive = receive;
+		subtext = String.format(subtext, receive);
 		descr = String.format("Bonus: %d", receive);
 		this.setDescr(descr);
+		this.setSubtext(subtext);
 	}
 
 	//Getter

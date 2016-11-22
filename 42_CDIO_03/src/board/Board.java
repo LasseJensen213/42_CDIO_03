@@ -12,7 +12,9 @@ import stringbanks.Field_Stringbank;
 
 public class Board {
 
-	
+	/**
+	 * 
+	 */
 	public static void generateBoard()
 	{
 		//Intialize the fields
@@ -50,6 +52,7 @@ public class Board {
 				title =FieldGenerator.getFields(i).getTitle();
 				descr = FieldGenerator.getFields(i).getDescr();
 				subtext = FieldGenerator.getFields(i).getSubtext();
+
 				fieldInUseReached++;
 			}
 			else
@@ -63,14 +66,12 @@ public class Board {
 			
 			Color bgColor = FieldGenerator.getBgColors(i);
 			Color fgColor = FieldGenerator.getFgColors(i);
-			fields[i]= new Street.Builder().setTitle(subtext).setDescription(title).setSubText(descr).
+			fields[i]= new Street.Builder().setTitle(title).setDescription(subtext).setSubText(descr).
 					setBgColor(bgColor).setFgColor(fgColor).setRent("").build();
 			System.out.println("Generating " +  title + "..");
 		}
 		GUI.create(fields);
-		System.out.println("IT'S ALIVE");
-		GUI.showMessage("IT'S ALIVE");
-		
+	
 		
 	}
 

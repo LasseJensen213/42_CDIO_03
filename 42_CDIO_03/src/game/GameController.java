@@ -59,17 +59,17 @@ public class GameController {
 			if(playerManager.checkForWinner())
 			{
 				gameGUI.showWinnerMsg(playerManager.get(pNr).getName());
+				
 				break;
 			}
 
 		}
-		GUI.close();
 
 
 
 	}
 
-
+	
 	public void playerIsBroke(int pNr)
 	{
 		//Spilleren med spiller nummeret har tabt og alle de felter han ejede bliver frisat.
@@ -108,7 +108,7 @@ public class GameController {
 		else if (statement==false)
 		{
 			System.out.println("TESTMODE OFF");
-			gameGUI.setRotateNr(30);
+			gameGUI.setRotateNr(20);
 			gameGUI.setSleep(400);
 		}
 		

@@ -18,6 +18,8 @@ public class LaborCamp extends Ownable {
 	{
 		super(title, descr, subtext, price);
 		this.baseRent = baseRent;
+		subtext = String.format(subtext, price);
+		this.setSubtext(subtext);
 		descr = String.format("Price: %d", price);
 		this.setDescr(descr);
 
@@ -50,7 +52,7 @@ public class LaborCamp extends Ownable {
 			int nLaborCampsOwned = this.getOwner().getLaborOwned();
 			player.getAccount().withdraw(baseRent*diceTotal*nLaborCampsOwned);
 			this.getOwner().getAccount().deposit(baseRent*diceTotal*nLaborCampsOwned);
-			gui.showOpponentFieldMsg(this.getOwner().getName(), baseRent*diceTotal*nLaborCampsOwned);
+			gui.showOpponentFieldMsg(this.getOwner().getName(),player.getName(), baseRent*diceTotal*nLaborCampsOwned);
 		}
 
 	}

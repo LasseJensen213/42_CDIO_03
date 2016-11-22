@@ -18,6 +18,8 @@ public class Territory extends Ownable {
 		this.rent = rent;
 		descr = String.format("Price: %d", price);
 		this.setDescr(descr);
+		subtext = String.format(subtext, price,rent);
+		this.setSubtext(subtext);
 	}
 
 	@Override
@@ -66,7 +68,7 @@ public class Territory extends Ownable {
 
 			player.getAccount().withdraw(rent);
 			owner.getAccount().deposit(rent);
-			gui.showOpponentFieldMsg(owner.getName(), rent);
+			gui.showOpponentFieldMsg(owner.getName(),player.getName(), rent);
 
 		}
 	}

@@ -12,15 +12,20 @@ public class Tax extends Field{
 		super(title, descr, subtext);
 		this.taxAmount = taxAmount;
 		this.taxRate = taxRate;
+		
 		if(taxRate==10)
 		{
-			descr = String.format("Lose: %d or 10%% of balance", taxAmount);
+			descr = String.format(descr, taxAmount);
+			subtext = String.format(subtext, taxAmount,taxRate);
+
 		}
-		else
+		else if (taxRate==0)
 		{
-			descr = String.format("Lose: %d", taxAmount);
+			descr = String.format(descr, taxAmount);
+			subtext = String.format(subtext, taxAmount);
 		}
 		this.setDescr(descr);
+		this.setSubtext(subtext);
 	}
 
 	/**
