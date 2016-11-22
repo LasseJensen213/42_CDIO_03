@@ -5,8 +5,8 @@ import game.GameController;
 import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
-	private boolean testmode = false;
-	
+	private boolean testmode = true;
+
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
@@ -16,9 +16,26 @@ public class GUI_Controller {
 		gameGUI = new BoardGameGUI();
 	}
 
+
+	//Main
+	public void startGame()
+	{
+		boolean playGame = true;
+		while(playGame)
+		{
+			mainMenuController();
+			playGame = restart();
+			
+			
+		}
+		
+	}
+	/**
+	 * Function that starts the game when called.
+	 */
 	public void mainMenuController()
 	{
-		
+
 		gameBoard.generateBoard();
 		while(true)
 		{
@@ -29,12 +46,8 @@ public class GUI_Controller {
 				GameController game = new GameController();
 				game.testmode(testmode);
 				game.gameControl(); 
-				
-				// når man hopper ud af denne metode er GUI'en 
-				//lukket ned så man skal starte den op igen
-				GUI.close();
-				gameBoard = new Board();
-				gameBoard.generateBoard();
+
+				break;
 
 			}
 			else if(input.equals(Game_Stringbank.getMainMenuMsg(3)))
@@ -49,6 +62,12 @@ public class GUI_Controller {
 		}
 	}
 
+	/**
+	 * 
+	 * @param name: Player name
+	 * @return true if player wants to roll the dice <br> false if the player wants to quit the game
+	 *
+	 */
 	public boolean preRollMenuController(String name)
 	{
 		while(true)
@@ -59,7 +78,7 @@ public class GUI_Controller {
 			}
 			else if(testmode ==false)
 			{	
-			String input = gameGUI.preRollMenu(name);
+				String input = gameGUI.preRollMenu(name);
 
 				if(input.equals(Game_Stringbank.getPreRollMsg(1)))
 					return true;
@@ -73,6 +92,21 @@ public class GUI_Controller {
 		this.testmode = testmode;
 	}
 
+	public boolean restart()
+	{
+		String input = GUI.getUserSelection(Game_Stringbank.getRestartMessage(), Game_Stringbank.getYesNoArr());
+		if(input == "Yes")
+		{
+			GUI.close();
+			
+			return true;
+		}
+		else
+		{
+			GUI.close();
+			return false;
+		}
+	}
 
 
 

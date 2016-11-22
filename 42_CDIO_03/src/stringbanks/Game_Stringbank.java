@@ -33,6 +33,7 @@ public class Game_Stringbank {
 	private static String trueButton = "Yes";
 	private static String falseButton = "No";
 	
+	private static String[] yesNoArr = {trueButton,falseButton};
 	private static String[] confirmArr = {confirmMessage, trueButton,falseButton};
 	
 	//Messages for Land on field methods in the field subclasses
@@ -47,6 +48,9 @@ public class Game_Stringbank {
 	private static String tax_TwoOptions = "You've landed on a Tax field. \n     You have to pay %d or 10%% of you total assets";
 	private static String tax_Option1 ="Pay: %d";
 	private static String tax_Option2 ="10%%: %d";
+	
+	//Restart message.
+	private static String restartMessage = "Do you want to play the game again?";
 	
 	/**
 	 * Field messages.
@@ -66,8 +70,7 @@ public class Game_Stringbank {
 										ownableFieldMsg_YouOwn , ownableFieldMsg_DontOwn,
 										refugeMsg , tax_NoOption , tax_TwoOptions, tax_Option1, tax_Option2};
 	
-	private static String winnerMsg = "Congratulations! %s you have beaten all the other players. "
-									+ "you will now return to the main menu";
+	private static String winnerMsg = "Congratulations! %s you have beaten all the other players. ";
 	
 	private static String brokeMsg = "%s is broke and has been removed from the game";
 	/**
@@ -144,4 +147,14 @@ public class Game_Stringbank {
 	{
 		return brokeMsg;
 	}
+
+	public static String getRestartMessage() {
+		return restartMessage;
+	}
+
+	public static String[] getYesNoArr() {
+		return yesNoArr;
+	}
+	
+	
 }

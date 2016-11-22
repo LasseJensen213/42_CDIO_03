@@ -167,7 +167,7 @@ public class BoardGameGUI {
 	
 	public void showOpponentFieldMsg(String name1,String name2, int rent)
 	{
-		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(4), name1,name2,rent));
+		GUI.showMessage(String.format(Game_Stringbank.getFieldMsg(4), name2,name1,rent));
 	}
 	
 	public void showRefugeMsg(int bonus)

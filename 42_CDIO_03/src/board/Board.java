@@ -32,7 +32,6 @@ public class Board {
 		String title;
 		String descr;
 		String subtext;
-		String name = "";
 		
 		Field[] fields = new Field[40];
 		int fieldInUseReached = 0;
@@ -53,7 +52,6 @@ public class Board {
 				title =FieldGenerator.getFields(i).getTitle();
 				descr = FieldGenerator.getFields(i).getDescr();
 				subtext = FieldGenerator.getFields(i).getSubtext();
-				name = FieldGenerator.getFields(i).getClass().getName();
 
 				fieldInUseReached++;
 			}
