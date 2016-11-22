@@ -63,6 +63,7 @@ public class GameController {
 			}
 
 		}
+		GUI.close();
 
 
 
@@ -72,6 +73,7 @@ public class GameController {
 	public void playerIsBroke(int pNr)
 	{
 		//Spilleren med spiller nummeret har tabt og alle de felter han ejede bliver frisat.
+		gameGUI.showBrokeMsg(playerManager.get(pNr).getName());
 		playerManager.get(pNr).setBroke(true);
 		playerManager.get(pNr).setFleetsOwned(0);
 		playerManager.get(pNr).setLaborOwned(0);
