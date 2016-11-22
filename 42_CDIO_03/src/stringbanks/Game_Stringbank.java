@@ -12,10 +12,9 @@ public class Game_Stringbank {
 	private static String gameRules ="This game is for 2-6 players of all ages.\n"
 			+ "On the players turn they roll 2 dice and the game will move their car accordingly.\n"
 			+ "There are five types of fields. Territory, Refuge, Labor camp, tax and fleet.\n"
-			+ " - Territory and fleet is ownable fields that the player will have the option to buy. Other players will then have to "
-			+ "pay the owner each time they land on that field. Fleets increase in value the more you own.\n"
+			+ " - Territory, fleet and labor camp are ownable fields that the player will have the option to buy. "
+			+ "Other players will then have to pay the owner each time they land on that field.\n"
 			+ " - On a refuge field the player will receive either 500 or 5000 depending on the refuge.\n"
-			+ " - On a labor camp field the player pays 100 times the amount the facevalue of the dice.\n"
 			+ " - On a tax field the player pays either 2000, or 4000 or 10% of their assets, depending on the tax field.\n"
 			+ "When a player hits 0 they lose. The game ends when all but one player is broke.";
 	
