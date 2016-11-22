@@ -68,9 +68,7 @@ public class Board {
 			System.out.println("Generating " +  title + "..");
 		}
 		GUI.create(fields);
-		System.out.println("IT'S ALIVE");
-		GUI.showMessage("IT'S ALIVE");
-		
+	
 		
 	}
 

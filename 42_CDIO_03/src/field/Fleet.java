@@ -10,7 +10,8 @@ public class Fleet extends Ownable{
 	public Fleet(String title,String descr, String subtext,int price)
 	{
 		super(title,descr,subtext,price);
-		descr = String.format("Price: %d", price);
+		descr = String.format(descr, price) + " antal felter ejet" + "<br> qwer";
+		System.out.println(descr);
 		this.setDescr(descr);
 
 	}
