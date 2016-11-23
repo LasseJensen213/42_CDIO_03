@@ -41,6 +41,7 @@ public class LaborCampTest {
 	public void LandOnAOwnedLaborCampField() {
 		p1.setDiceResult(10);
 		LaborCamp1.setOwner(p1);
+		p1.setLaborOwned(1);
 		LaborCamp1.landOnField(p2);
 		p2.setDiceResult(7);
 		int expected = 29000;
