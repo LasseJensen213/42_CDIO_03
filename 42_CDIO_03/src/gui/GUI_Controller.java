@@ -5,7 +5,7 @@ import game.GameController;
 import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
-	private boolean testmode = true;
+	private boolean testmode = false;
 
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
