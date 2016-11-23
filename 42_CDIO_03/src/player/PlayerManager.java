@@ -61,6 +61,7 @@ public class PlayerManager {
 			addPlayer(name);
 			playerList.get(i).setCar(playerCreateGUI.getColor(color));
 			playerCreateGUI.addPlayerToBoard(playerList.get(i));
+				
 			
 		}
 		
