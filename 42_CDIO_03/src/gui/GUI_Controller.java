@@ -5,7 +5,8 @@ import game.GameController;
 import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
-	private boolean testmode = true;
+	private boolean testmode = false;
+	private boolean quit = false;
 
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
@@ -24,7 +25,12 @@ public class GUI_Controller {
 		while(playGame)
 		{
 			mainMenuController();
-			playGame = restart();
+			if (quit)
+			{
+				break;
+			}
+			else
+				playGame = restart();
 			
 			
 		}
@@ -37,8 +43,10 @@ public class GUI_Controller {
 	{
 
 		gameBoard.generateBoard();
+		
 		while(true)
 		{
+			
 			gameGUI = new BoardGameGUI();
 			String input = gameGUI.menu();
 			if(input.equals(Game_Stringbank.getMainMenuMsg(1)))
@@ -57,8 +65,11 @@ public class GUI_Controller {
 			else if(gameGUI.confirmInput())
 			{
 				GUI.close();
+				this.quit = true;
 				break;
+
 			}
+			
 		}
 	}
 
