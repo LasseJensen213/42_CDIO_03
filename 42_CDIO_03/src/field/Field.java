@@ -6,9 +6,9 @@ import player.Player;
 public abstract class Field {
 	
 	
-	String title; //Titel på selve feltet i GUI.
-	String descr; //Beskrivelse i selve feltet i GUI
-	String subtext; //Beskrivelse, der bruges til det store felt i midten
+	private String title; //Titel på selve feltet i GUI.
+	private String descr; //Beskrivelse i selve feltet i GUI
+	private String subtext; //Beskrivelse, der bruges til det store felt i midten
 	
 	public Field(String title, String descr,String subtext )
 	{

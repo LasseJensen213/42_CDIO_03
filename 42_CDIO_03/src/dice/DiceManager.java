@@ -2,7 +2,7 @@ package dice;
 import java.util.*;
 public class DiceManager {
 	//Dice Cup
-	ArrayList<Dice> diceList;
+	private ArrayList<Dice> diceList;
 
 	public DiceManager(int numOfDice, int numOfSides)
 	{
