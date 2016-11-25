@@ -2,10 +2,12 @@ package gui;
 import board.Board;
 import desktop_resources.GUI;
 import game.GameController;
+import stringbanks.Game_Stringbank;
 
 public class GUI_Controller {
-	private boolean testmode = true;
-	
+	private boolean testmode = false;
+	private boolean quit = false;
+
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
 
@@ -15,40 +17,68 @@ public class GUI_Controller {
 		gameGUI = new BoardGameGUI();
 	}
 
+
+	//Main
+	public void startGame()
+	{
+		boolean playGame = true;
+		while(playGame)
+		{
+			mainMenuController();
+			if (quit)
+			{
+				break;
+			}
+			else
+				playGame = restart();
+			
+			
+		}
+		
+	}
+	/**
+	 * Function that starts the game when called.
+	 */
 	public void mainMenuController()
 	{
-		
+
 		gameBoard.generateBoard();
+		
 		while(true)
 		{
+			
 			gameGUI = new BoardGameGUI();
 			String input = gameGUI.menu();
-			if(input.equals("New game"))
+			if(input.equals(Game_Stringbank.getMainMenuMsg(1)))
 			{
 				GameController game = new GameController();
 				game.testmode(testmode);
 				game.gameControl(); 
-				
-				// når man hopper ud af denne metode er GUI'en 
-				//lukket ned så man skal starte den op igen
-				GUI.close();
-				gameBoard = new Board();
-				gameBoard.generateBoard();
+				break;
 
 			}
-			else if(input.equals("Rules of the game"))
+			else if(input.equals(Game_Stringbank.getMainMenuMsg(3)))
 			{
 				gameGUI.showRules();
 			}
 			else if(gameGUI.confirmInput())
 			{
 				GUI.close();
+				this.quit = true;
 				break;
+
 			}
+			
 		}
 	}
 
-	public boolean preRollMenuController()
+	/**
+	 * 
+	 * @param name: Player name
+	 * @return true if player wants to roll the dice <br> false if the player wants to quit the game
+	 *
+	 */
+	public boolean preRollMenuController(String name)
 	{
 		while(true)
 		{
@@ -58,9 +88,9 @@ public class GUI_Controller {
 			}
 			else if(testmode ==false)
 			{	
-			String input = gameGUI.preRollMenu();
+				String input = gameGUI.preRollMenu(name);
 
-				if(input.equals("Roll dice"))
+				if(input.equals(Game_Stringbank.getPreRollMsg(1)))
 					return true;
 				else if(gameGUI.confirmInput())
 					return false;
@@ -72,6 +102,21 @@ public class GUI_Controller {
 		this.testmode = testmode;
 	}
 
+	public boolean restart()
+	{
+		String input = GUI.getUserSelection(Game_Stringbank.getRestartMessage(), Game_Stringbank.getYesNoArr());
+		if(input == "Yes")
+		{
+			GUI.close();
+			
+			return true;
+		}
+		else
+		{
+			GUI.close();
+			return false;
+		}
+	}
 
 
 

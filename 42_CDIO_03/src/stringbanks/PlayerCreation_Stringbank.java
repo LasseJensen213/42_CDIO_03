@@ -3,20 +3,22 @@ package stringbanks;
 public class PlayerCreation_Stringbank {
 
 
-	//Messages used by PlayerManager class
+	//Messages used by PlayerCreationGUI class
 	private static String chooseNumPlayers = "Please choose the number of players [2-6]";
 	private static String choosePlayerName = "Player %d please choose your name [MAX 16 CHARACTERS]";
 	private static String nameTooLong = "The name is too long";
 	private static String nameTaken = "Sorry, but that name has been taken";
 	private static String chooseColor = "Choose the color for your car";
 
-	
+	//Names for all the available colors
 	private static String colorBlue = "Blue";
 	private static String colorGreen = "Green";
 	private static String colorRed = "Red";
 	private static String colorYellow = "Yellow";
 	private static String colorWhite ="White";
 	private static String colorPink ="Pink";
+	
+	private static String defaultPlayerName = "Player";
 	
 	private static String[] PlayerCreation_Messages ={chooseNumPlayers,choosePlayerName,
 													  nameTooLong,nameTaken,
@@ -49,5 +51,10 @@ public class PlayerCreation_Stringbank {
 	public static String[] getColors()
 	{
 		return colors;
+	}
+	
+	public static String getPlayerName()
+	{
+		return defaultPlayerName;
 	}
 }

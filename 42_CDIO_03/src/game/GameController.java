@@ -6,7 +6,6 @@ import player.PlayerManager;
 import board.Board;
 import board.FieldGenerator;
 import desktop_resources.GUI;
-import board.FieldGenerator;
 
 public class GameController {
 
@@ -38,7 +37,7 @@ public class GameController {
 		pNr = 0;
 
 		//tjekker om spilleren vil fortsætte spillet eller gå tilbage til menuen
-		while(gCtrl.preRollMenuController())
+		while(gCtrl.preRollMenuController(playerManager.get(pNr).getName()))
 		{
 
 			diceCup.rollDice();
@@ -59,9 +58,8 @@ public class GameController {
 			pNr = playerManager.nextPlayer(pNr);
 			if(playerManager.checkForWinner())
 			{
-				//TODO: Vinder besked?
-				String besked = playerManager.get(pNr).getName() + " har vundet!";
-				GUI.showMessage(besked);
+				gameGUI.showWinnerMsg(playerManager.get(pNr).getName());
+				
 				break;
 			}
 
@@ -71,10 +69,11 @@ public class GameController {
 
 	}
 
-
+	
 	public void playerIsBroke(int pNr)
 	{
 		//Spilleren med spiller nummeret har tabt og alle de felter han ejede bliver frisat.
+		gameGUI.showBrokeMsg(playerManager.get(pNr).getName());
 		playerManager.get(pNr).setBroke(true);
 		playerManager.get(pNr).setFleetsOwned(0);
 		playerManager.get(pNr).setLaborOwned(0);
@@ -109,7 +108,7 @@ public class GameController {
 		else if (statement==false)
 		{
 			System.out.println("TESTMODE OFF");
-			gameGUI.setRotateNr(30);
+			gameGUI.setRotateNr(20);
 			gameGUI.setSleep(400);
 		}
 		

@@ -47,6 +47,9 @@ public abstract class Field {
 	 */
 	public abstract void freeOwner(Player player, int pos);
 
+	
+	public abstract int getRent();
+	
 	@Override
 	public String toString() {
 		return "Field: "+descr;

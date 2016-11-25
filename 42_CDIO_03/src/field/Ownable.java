@@ -11,7 +11,6 @@ public abstract class Ownable extends Field{
 		this.price = price;
 	}
 	
-	public abstract int getRent();
 	
 	public int getPrice() {
 		return price;

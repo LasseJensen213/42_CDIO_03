@@ -44,7 +44,7 @@ public class PlayerCreationGUI {
 			}
 			else if(name.length()==0)
 			{
-				name = "Player "+(nPlayersInList+1);
+				name = PlayerCreation_Stringbank.getPlayerName()+" "+(nPlayersInList+1);
 			}
 			if(playerManager.nameTaken(name))
 			{
@@ -66,7 +66,6 @@ public class PlayerCreationGUI {
 	
 	public void addPlayerToBoard(Player player)
 	{
-		//CHANGE WE CAN BELIEVE IN
 		String name = player.getName();
 		int balance = player.getAccount().getBalance();
 		GUI.addPlayer(name, balance, player.getCar() );
