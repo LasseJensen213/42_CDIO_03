@@ -1,6 +1,5 @@
 package field;
 
-import desktop_resources.GUI;
 import gui.BoardGameGUI;
 import player.Player;
 import stringbanks.Game_Stringbank;

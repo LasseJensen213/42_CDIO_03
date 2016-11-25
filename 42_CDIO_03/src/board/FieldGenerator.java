@@ -17,7 +17,6 @@ public class FieldGenerator {
 	 * Describes the fields in use in the GUI.
 	 */
 	private final static int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
-	private int nFields = 22; 				// Number of fields in use
 	//Territory related information.
 	private final static int territoryPrice[] = {1000,1500,2000,3000,4000,4300,4750,5000,5500,6000,8000};
 	private final static int territoryRent[] = {100,300,500,700,1000,1300,1600,2000,2600,3200,4000};
