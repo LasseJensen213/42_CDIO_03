@@ -34,7 +34,6 @@ public class LaborCamp extends Ownable {
 				if(input.equals(Game_Stringbank.getFieldMsg(0)))
 				{
 					this.setOwner(player);
-					player.setLaborOwned(player.getLaborOwned()+1);
 					player.getAccount().withdraw(this.getPrice());
 					gui.setOwner(player.getPlayerPos(), player.getName());
 				}
@@ -80,6 +79,15 @@ public class LaborCamp extends Ownable {
 				this.setDescr(String.format("Price: %d", this.getPrice()));
 			}
 		}
+	}
+	
+	
+	@Override
+	public void setOwner(Player player)
+	{
+		super.setOwner(player);
+		player.setLaborOwned(player.getLaborOwned()+1);
+		
 	}
 
 
