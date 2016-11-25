@@ -39,13 +39,13 @@ public class LaborCampTest {
 	
 	@Test
 	public void LandOnAOwnedLaborCampField() {
-		p1.setDiceResult(10);
+		p2.setDiceResult(10);
 		LaborCamp1.setOwner(p1);
 		p1.setLaborOwned(1);
 		LaborCamp1.landOnField(p2);
 		p2.setDiceResult(7);
 		int expected = 29000;
-		int actual = p1.getAccount().getBalance();
+		int actual = p2.getAccount().getBalance();
 		assertEquals(expected, actual);
 	}
 	

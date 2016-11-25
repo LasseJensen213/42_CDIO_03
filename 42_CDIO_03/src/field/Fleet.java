@@ -26,8 +26,9 @@ public class Fleet extends Ownable{
 	}
 	@Override
 	public void setOwner(Player owner) {
-		owner.setFleetsOwned(owner.getFleetsOwned()+1);
 		super.setOwner(owner);
+		if(this.getOwner()!=null)
+			owner.setFleetsOwned(owner.getFleetsOwned()+1);
 	}
 
 	@Override

@@ -54,7 +54,6 @@ public class GUI_Controller {
 				GameController game = new GameController();
 				game.testmode(testmode);
 				game.gameControl(); 
-
 				break;
 
 			}

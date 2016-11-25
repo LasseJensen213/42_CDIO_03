@@ -13,7 +13,7 @@ public class FieldGenerator {
 	private static Color bgColors[] = new Color[40];
 	private static Color fgColors[] = new Color[40];
 
-	/**
+	/**x
 	 * Describes the fields in use in the GUI.
 	 */
 	private final static int fieldsInUse[] = {0,2,4,6,8,10,11,13,15,17,19,20,22,24,26,28,30,31,33,35,37,39};
