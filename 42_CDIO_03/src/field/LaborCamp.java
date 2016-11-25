@@ -80,14 +80,15 @@ public class LaborCamp extends Ownable {
 			}
 		}
 	}
-	
-	
+
+
 	@Override
 	public void setOwner(Player player)
 	{
 		super.setOwner(player);
-		player.setLaborOwned(player.getLaborOwned()+1);
-		
+		if(this.getOwner()!=null)
+			player.setLaborOwned(player.getLaborOwned()+1);
+
 	}
 
 
