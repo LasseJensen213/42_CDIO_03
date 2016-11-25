@@ -7,6 +7,7 @@ import stringbanks.Game_Stringbank;
 public class GUI_Controller {
 	private boolean testmode = false;
 	private boolean quit = false;
+	private static boolean backFromMenu = false;
 
 	private Board gameBoard;
 	private BoardGameGUI gameGUI;
@@ -24,17 +25,17 @@ public class GUI_Controller {
 		boolean playGame = true;
 		while(playGame)
 		{
+			backFromMenu=false;
 			mainMenuController();
 			if (quit)
 			{
 				break;
 			}
-			else
+			else if(!backFromMenu)
 				playGame = restart();
-			
-			
+
 		}
-		
+
 	}
 	/**
 	 * Function that starts the game when called.
@@ -43,10 +44,10 @@ public class GUI_Controller {
 	{
 
 		gameBoard.generateBoard();
-		
+
 		while(true)
 		{
-			
+
 			gameGUI = new BoardGameGUI();
 			String input = gameGUI.menu();
 			if(input.equals(Game_Stringbank.getMainMenuMsg(1)))
@@ -68,7 +69,7 @@ public class GUI_Controller {
 				break;
 
 			}
-			
+
 		}
 	}
 
@@ -92,8 +93,10 @@ public class GUI_Controller {
 
 				if(input.equals(Game_Stringbank.getPreRollMsg(1)))
 					return true;
-				else if(gameGUI.confirmInput())
+				else if(gameGUI.confirmInput()){
+					backFromMenu = true;
 					return false;
+				}		
 			}				
 		}
 	}
@@ -108,7 +111,7 @@ public class GUI_Controller {
 		if(input == "Yes")
 		{
 			GUI.close();
-			
+
 			return true;
 		}
 		else
