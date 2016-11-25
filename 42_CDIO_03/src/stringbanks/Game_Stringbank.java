@@ -9,13 +9,20 @@ public class Game_Stringbank {
 	private static String newGame ="New game";
 	private static String endGame ="Close";
 	private static String getRules ="Rules of the game";
-	private static String gameRules ="MISSING_NEED_RULES";
+	private static String gameRules ="This game is for 2-6 players of all ages.\n"
+			+ "On the players turn they roll 2 dice and the game will move their car accordingly.\n"
+			+ "There are five types of fields. Territory, Refuge, Labor camp, tax and fleet.\n"
+			+ " - Territory, fleet and labor camp are ownable fields that the player will have the option to buy. "
+			+ "Other players will then have to pay the owner each time they land on that field.\n"
+			+ " - On a refuge field the player will receive either 500 or 5000 depending on the refuge.\n"
+			+ " - On a tax field the player pays either 2000, or 4000 or 10% of their assets, depending on the tax field.\n"
+			+ "When a player hits 0 they lose. The game ends when all but one player is broke.";
 	
 	private static String[]mainMenuArr = {mainMenuMsg,newGame,endGame,getRules,gameRules};
 	
 	//Pre roll menu options
 	private static String preRollMenuMsg = "%s: It's your turn";
-	private static String roll = "Roll dice";
+	private static String roll = "Roll the dice";
 	private static String backToMenu = "Back to menu";
 	
 	private static String[]preRollMenuArr = {preRollMenuMsg,roll,backToMenu};
@@ -25,27 +32,44 @@ public class Game_Stringbank {
 	private static String trueButton = "Yes";
 	private static String falseButton = "No";
 	
+	private static String[] yesNoArr = {trueButton,falseButton};
 	private static String[] confirmArr = {confirmMessage, trueButton,falseButton};
 	
 	//Messages for Land on field methods in the field subclasses
-	private static String buyOption = "Buy";
-	private static String dontBuy = "Skip";
+	private static String buyOption = "Yes - I want to buy the field.";
+	private static String dontBuy = "No - I don't want to buy the field.";
 	
-	private static String ownableFieldMsg_NoOwner = "You've landed on a %s the price is: %d and the rent is: %d";
-	private static String ownableFieldMsg_YouOwn = "You've landed on your %s";
-	private static String ownableFieldMsg_DontOwn = "%s is demanding a rent of: %d";
+	private static String ownableFieldMsg_NoOwner = "You've landed the field \"%s\". Do you want to buy it?";
+	private static String ownableFieldMsg_YouOwn = "You've landed on your own field \"%s\"";
+	private static String ownableFieldMsg_DontOwn = "%s have to pay %s '%d'.";
 	private static String refugeMsg = "You've recieved a bonus of: %d";
-	private static String tax_NoOption ="You had to pay: %d";
-	private static String tax_TwoOptions = "You have to pay %d or 10%% of you balance";
+	private static String tax_NoOption ="You've landed on a Tax field. You have to pay %d";
+	private static String tax_TwoOptions = "You've landed on a Tax field. \n     You have to pay %d or 10%% of you total assets";
 	private static String tax_Option1 ="Pay: %d";
 	private static String tax_Option2 ="10%%: %d";
 	
+	//Restart message.
+	private static String restartMessage = "Do you want to play the game again?";
+	
+	/**
+	 * Field messages.
+	 * @return 
+	 * 0: Buy <br>
+	 * 1: Don't buy <br>
+	 * 2: No owner <br>
+	 * 3: Players own field <br>
+	 * 4: Not players own field <br>
+	 * 5: Refuge message <br>
+	 * 6: Cheap tax field <br>
+	 * 7: Expensive tax field <br>
+	 * 8: Tax - Pay 4000 <br>
+	 * 9: Tax - Pay 10% of assets <br>
+ 	 */
 	private static String[] fieldMsg = {buyOption , dontBuy , ownableFieldMsg_NoOwner,
 										ownableFieldMsg_YouOwn , ownableFieldMsg_DontOwn,
 										refugeMsg , tax_NoOption , tax_TwoOptions, tax_Option1, tax_Option2};
 	
-	private static String winnerMsg = "Congratulations! %s you have beaten all the other players. "
-									+ "you will now return to the main menu";
+	private static String winnerMsg = "Congratulations! %s you have beaten all the other players. ";
 	
 	private static String brokeMsg = "%s is broke and has been removed from the game";
 	/**
@@ -122,4 +146,14 @@ public class Game_Stringbank {
 	{
 		return brokeMsg;
 	}
+
+	public static String getRestartMessage() {
+		return restartMessage;
+	}
+
+	public static String[] getYesNoArr() {
+		return yesNoArr;
+	}
+	
+	
 }
