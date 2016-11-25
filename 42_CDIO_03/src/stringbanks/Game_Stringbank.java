@@ -5,7 +5,7 @@ public class Game_Stringbank {
 	//These are the string used by the main game and the menu
 	
 	//Main menu options
-	private static String mainMenuMsg = "Welcome to boardgame 2: The reckoning. Please choose from the menu";
+	private static String mainMenuMsg = "Welcome to the boardgame. Please choose from the menu";
 	private static String newGame ="New game";
 	private static String endGame ="Close";
 	private static String getRules ="Rules of the game";
