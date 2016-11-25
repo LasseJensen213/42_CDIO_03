@@ -24,6 +24,11 @@ public class Fleet extends Ownable{
 		
 		return (int)(500*Math.pow(2,this.getOwner().getFleetsOwned()-1));
 	}
+	@Override
+	public void setOwner(Player owner) {
+		owner.setFleetsOwned(owner.getFleetsOwned()+1);
+		super.setOwner(owner);
+	}
 
 	@Override
 	public void landOnField (Player p) 
@@ -43,8 +48,6 @@ public class Fleet extends Ownable{
 				if(input.equals(Game_Stringbank.getFieldMsg(0)))
 				{
 					this.setOwner(p);
-					int alreadyOwned = p.getFleetsOwned();
-					p.setFleetsOwned(alreadyOwned+1);
 					gui.setOwner(p.getPlayerPos(), p.getName());
 					p.getAccount().withdraw(this.getPrice());
 				}
