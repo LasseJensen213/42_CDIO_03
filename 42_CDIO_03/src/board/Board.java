@@ -16,13 +16,10 @@ import stringbanks.Field_Stringbank;
 
 public class Board {
 
-<<<<<<< HEAD
 
-=======
 	/**
 	 * 
 	 */
->>>>>>> refs/remotes/origin/JimmyBranch
 	public static void generateBoard()
 	{
 		//Intialize the fields
@@ -62,10 +59,9 @@ public class Board {
 				title =FieldGenerator.getFields(i).getTitle();
 				descr = FieldGenerator.getFields(i).getDescr();
 				subtext = FieldGenerator.getFields(i).getSubtext();
-<<<<<<< HEAD
+
 				name = FieldGenerator.getFields(i).getClass().getName();
-=======
->>>>>>> refs/remotes/origin/JimmyBranch
+
 
 				fieldInUseReached++;
 			}
@@ -80,7 +76,7 @@ public class Board {
 
 			Color bgColor = FieldGenerator.getBgColors(i);
 			Color fgColor = FieldGenerator.getFgColors(i);
-<<<<<<< HEAD
+
 			if(name=="field.Territory")
 			{
 				
@@ -105,21 +101,13 @@ public class Board {
 				fields[i]= new Refuge.Builder().setTitle(title).setDescription(title).setSubText(descr).
 						setBgColor(bgColor).setFgColor(fgColor).build();
 			}
-=======
+
 			fields[i]= new Street.Builder().setTitle(title).setDescription(subtext).setSubText(descr).
 					setBgColor(bgColor).setFgColor(fgColor).setRent("").build();
->>>>>>> refs/remotes/origin/JimmyBranch
 			System.out.println("Generating " +  title + "..");
 		}
 		GUI.create(fields);
-<<<<<<< HEAD
 
-
-
-=======
-	
-		
->>>>>>> refs/remotes/origin/JimmyBranch
 	}
 
 
